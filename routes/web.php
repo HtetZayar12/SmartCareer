@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend/signin');
-})->name;
-Route::get('/signup', function () {
-    return view('frontend/signup');
-});
+Route::get('signin', 'FrontendController@signin')->name('signinpage');
+Route::get('signup', 'FrontendController@signup')->name('signuppage');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('user','UserController');
