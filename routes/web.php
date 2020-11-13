@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('signin', 'FrontendController@signin')->name('signinpage');
 Route::get('signup', 'FrontendController@signup')->name('signuppage');
 Auth::routes();
