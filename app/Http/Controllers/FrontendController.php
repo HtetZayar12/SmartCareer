@@ -15,4 +15,13 @@ class FrontendController extends Controller
 	{
 	return view('frontend.signup');
 	}
+
+	public function home($value='')
+	{
+	return view('frontend.index');
+	}
+	public function profile($value='')
+	{
+	return view('frontend.profile');
+	}
 }

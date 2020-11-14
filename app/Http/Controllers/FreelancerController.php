@@ -48,7 +48,7 @@ class FreelancerController extends Controller
             $fileName = time().'_'.$request->photo->getClientOriginalName();
 
             // brandimg/624872374523_a.jpg
-            $filePath = $request->file('photo')->storeAs('itemimg', $fileName, 'public');
+            $filePath = $request->file('photo')->storeAs('userimg', $fileName, 'public');
 
             $path = '/storage/'.$filePath;
 
@@ -60,7 +60,7 @@ class FreelancerController extends Controller
             $freelancer->save();
 
             // redirect
-            return redirect()->route('category.index');
+            return redirect()->route('mainpage');
         }
     }
 
