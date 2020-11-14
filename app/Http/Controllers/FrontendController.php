@@ -20,8 +20,19 @@ class FrontendController extends Controller
 	{
 	return view('frontend.index');
 	}
+
 	public function profile($value='')
 	{
 	return view('frontend.profile');
+	}	
+
+	public function find_freelancer($value='')
+	{
+	return view('frontend.find_freelancer');
+	}
+
+	public function projectform($value='')
+	{
+	return view('frontend.projectform');
 	}
 }
