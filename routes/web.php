@@ -33,3 +33,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('user','UserController');
 
+Route::get('freelancer', 'FrontendController@find_freelancer')->name('freelancerpage');
+Route::get('postproject', 'FrontendController@projectform')->name('projectform');
+
