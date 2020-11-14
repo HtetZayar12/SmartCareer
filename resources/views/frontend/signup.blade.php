@@ -69,7 +69,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-check-inline mb-2 col-6">
-                                        <input type="radio" name="radio" value="employer" class="form-check-input">
+                                        <input type="radio" name="radio" value="employer" class="form-check-input" checked="checked">
                                         <label class="form-check-label ml-2">{{ __('Employer') }}</label>
                                     </div>
                                     <div class="form-check-inline mb-2 col-5">

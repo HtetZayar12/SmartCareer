@@ -42,7 +42,8 @@ class UserController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8',
-            'confirm_password' => 'required|string|min:8'
+            'confirm_password' => 'required|string|min:8',
+            
 
         ]);
 
@@ -55,11 +56,12 @@ class UserController extends Controller
 
         if ($request->radio == "freelancer") {
             $user->assignRole('freelancer');
+            return redirect()->route('freelancer.index');
         }else{
             $user->assignRole('employer');
+            return redirect()->route('employer.index');
         }
 
-        return redirect()->route('signinpage');
     }
 
     /**

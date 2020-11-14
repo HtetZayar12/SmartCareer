@@ -16,8 +16,8 @@ class CreateEmployersTable extends Migration
         Schema::create('employers', function (Blueprint $table) {
             $table->id();
             $table->text('photo');
-            $table->text('location');
             $table->text('description');
+            $table->text('address');
             $table->timestamps();
 
             $table->unsignedBigInteger('user_id');
