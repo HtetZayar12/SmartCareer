@@ -34,9 +34,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('user','UserController');
 
-<<<<<<< HEAD
-=======
+
+
 Route::get('freelancer', 'FrontendController@find_freelancer')->name('freelancerpage');
 Route::get('postproject', 'FrontendController@projectform')->name('projectform');
->>>>>>> c11dbfaaef13cadcc2db6f67370a133a61332fd8
+
 
