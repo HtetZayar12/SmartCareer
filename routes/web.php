@@ -20,6 +20,7 @@ Route::resource('subcategory','SubcategoryController');
 Route::resource('salary','SalaryController');
 Route::resource('location','LocationController');
 
+
 //Employer And Freelancer
 Route::resource('employer','EmployerController');
 Route::resource('freelancer','FreelancerController');
