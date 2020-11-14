@@ -19,7 +19,7 @@ Route::resource('category','CategoryController');
 Route::resource('subcategory','SubcategoryController');
 Route::resource('salary','SalaryController');
 Route::resource('location','LocationController');
-=======
+
 
 Route::get('signin', 'FrontendController@signin')->name('signinpage');
 Route::get('signup', 'FrontendController@signup')->name('signuppage');
@@ -27,4 +27,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('user','UserController');
->>>>>>> 70125c622f082e3b927cf4858353b776a137ada7
+
