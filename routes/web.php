@@ -19,3 +19,9 @@ Route::get('/', function () {
 Route::get('/signup', function () {
     return view('frontend/signup');
 });
+
+//For Backend
+Route::resource('category','CategoryController');
+Route::resource('subcategory','SubcategoryController');
+Route::resource('salary','SalaryController');
+Route::resource('location','LocationController');
