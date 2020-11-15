@@ -20,6 +20,10 @@ Route::resource('subcategory','SubcategoryController');
 Route::resource('salary','SalaryController');
 Route::resource('location','LocationController');
 
+//Frontend
+
+Route::resource('job','JobController');
+
 //Employer And Freelancer
 Route::resource('employer','EmployerController');
 Route::resource('freelancer','FreelancerController');
@@ -36,7 +40,7 @@ Route::resource('user','UserController');
 
 
 
-Route::get('freelancer', 'FrontendController@find_freelancer')->name('freelancerpage');
+Route::get('jobs', 'FrontendController@find_freelancer')->name('freelancerpage');
 Route::get('postproject', 'FrontendController@projectform')->name('projectform');
 
 

@@ -24,7 +24,7 @@
 <body>
     <nav class="navbar navbar-dark navbar-expand-lg text-center" id="app-navbar">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{route('mainpage')}}">
                 <i class="icon ion-ios-infinite" id="brand-logo"></i>
             </a>
             <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
@@ -34,9 +34,11 @@
             <div
                 class="collapse navbar-collapse text-center" id="navcol-1" style="font-family: Montserrat, sans-serif;text-align: center;">
                 <ul class="nav navbar-nav text-center mx-auto ml-auto">
-                    <li class="nav-item" style="padding-right: 20px;"><a class="nav-link active" href="#">Find Freelancers</a></li>
+                    <li class="nav-item" style="padding-right: 20px;"><a class="nav-link active" 
+                        href="{{route('freelancerpage')}}">Find Freelancers</a></li>
                     <li class="nav-item" style="padding-right: 20px;"><a class="nav-link" href="#">How it works</a></li>
-                    <li class="nav-item" style="padding-right: 20px;"><a class="nav-link" href="#">Projects</a></li>
+                    <li class="nav-item" style="padding-right: 20px;"><a class="nav-link" 
+                        href="{{route('projectform')}}">Projects</a></li>
                     <li class="nav-item"><a class="nav-link text-center" href="#">Shop</a></li>
                 </ul>
                 <ul class="nav navbar-nav ml-auto">
