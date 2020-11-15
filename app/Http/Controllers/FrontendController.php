@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Category;
+
 
 class FrontendController extends Controller
 {
+	
 	public function signin($value='')
 	{
 	return view('frontend.signin');
@@ -18,7 +21,9 @@ class FrontendController extends Controller
 
 	public function find_freelancer($value='')
 	{
-	return view('frontend.find_freelancer');
+	$categories=Category::all();
+	return view('frontend.find_freelancer',compact('categories'));
+
 	}
 
 	public function projectform($value='')

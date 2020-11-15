@@ -9,18 +9,32 @@
 		<div class="row">
 			<div class="col-md-3 mt-5 d-none d-sm-block">
 				<div class="container-fluid">
-				    <div id="accordion" class="accordion">
-				        <div class="mb-0"> 
-        				<h1 class="my-4"> Name</h1>
-        				<div class="list-group">
-          				<a href="#" class="list-group-item">Category 1</a>
-          				<a href="#" class="list-group-item">Category 2</a>
-          				<a href="#" class="list-group-item">Category 3</a>
-        				</div>	       
-				       </div>
-				    </div>
-				</div>
+				    <div class="accordion mt-4" id="accordionExample">
+  						@php $i=1; @endphp
+  						@foreach($categories as $category)
+  					<div class="card">
+    				<div class="card-header" id="headingOne">
+      					<h2 class="mb-0">
+        				<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne{{$i}}" aria-expanded="true" aria-controls="collapseOne{{$i}}">
+          				{{$category->name}}
+        				</button>
+      					</h2>
+    				</div>
+    				 <div id="collapseOne{{$i}}" class="collapse @if($loop->first) {{'show'}} @endif" aria-labelledby="headingOne" data-parent="#accordionExample">
+      				<div class="card-body">
+        			@foreach($category->subcategories as $subcategory)
+        			<a class="btn btn-link">{{$subcategory->name}}</a>
+        		@endforeach
+     		 </div>
+    		</div>
 			</div>
+ 				 @php $i++; @endphp
+  				@endforeach
+			</div>
+			</div>
+			</div>
+			
+
 
 			<div class="col-md-9" >
 				<h4 class="mb-5 text-info"> 1000 / 34223 freelancers founded for you</h4>			
@@ -49,6 +63,7 @@
 						  	</div>
 						</div>
 					</div>
+
 
 					
 
@@ -130,7 +145,9 @@
 </div>
 
 
-<script type="text/javascript" src="{{asset('frontend_asset/bootstrap/js/jquery.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('frontend_asset/js/jquery.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('frontend_asset/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+
 </body>
 </html> 
