@@ -12,50 +12,43 @@
 	<div class="row my-2">
 		<div class="col-md-12 col-lg-12 col-sm-12 mt-4">
 
-			<label class="font-weight-bold">Choose the service that you want <span class="text-warning"> *</span></label>
+			<label class="font-weight-bold">Choose Category <span class="text-warning"> *</span></label>
 
 			<select class="form-control select2 form-control-lg" name="" data-autofocus="true"  style="font-size: 16px;">
-				<option>1</option>
-	            <option>2</option>
-	            <option>3</option>
+              @foreach($categories as $category)
+              <option value="{{$category->id}}">{{$category->name}}</option>
+              @endforeach
 	        </select>    
 
 		</div>
 	</div>
 
 	<div class="row my-2">
-		<div class="col-md-6 col-lg-6 col-sm-12 my-2 ">
+		<div class="col-sm-12 my-2 ">
 			
+			<label class="font-weight-bold">Choose Subcategory <span class="text-warning"> *</span></label>
+
 			<select class="form-control select2 form-control-lg" name="" data-autofocus="true"  style="font-size: 16px;">
-				<option>1</option>
-	            <option>2</option>
-	            <option>3</option>
+				@foreach($subcategories as $subcategory)
+					<option value="{{$subcategory->id}}">{{$subcategory->name}}</option>
+				@endforeach
 	        </select>  
 									
 		</div>
-		<div class="col-md-6 my-2">
-			
-			<select class="form-control select2 form-control-lg" name="" data-autofocus="true"  style="font-size: 16px;">
-				<option>1</option>
-	            <option>2</option>
-	            <option>3</option>
-	        </select>  											
-		</div>
 	</div>
 
-	<div class="row my-2">
+	{{-- <div class="row my-2">
 		<div class="col-md-12 col-lg-12 col-sm-12 mt-4">
 
 			<label class="font-weight-bold">What skills should that freelancer have? <span class="text-warning"> *</span></label>
-
-			<select class="form-control select2 form-control-lg" name="" data-autofocus="true"  style="font-size: 16px;">
-				<option>1</option>
-	            <option>2</option>
-	            <option>3</option>
-	        </select>    
+			<div class="form-group">
+				<input type="text" name="skill_one" placeholder="skill one" class="form-control my-3">
+				<input type="text" name="skill_two" placeholder="skill two" class="form-control my-3">
+				<input type="text" name="skill_three" placeholder="skill three" class="form-control my-3">
+			</div>
 
 		</div>
-	</div>
+	</div> --}}
 
 	<label class="font-weight-bold mt-4">When do you want to finish your project? <span class="text-warning"> *</span></label>
 	<div class="row my-2">
@@ -66,9 +59,10 @@
 		<div class="col-md-6 ">
 			
 			<select class="form-control select2 form-control-lg" name="" data-autofocus="true"  style="font-size: 16px;">
-				<option>1</option>
-	            <option>2</option>
-	            <option>3</option>
+				<option>Hour</option>
+	            <option>Day</option>
+	            <option>Month</option>
+	            <option>Year</option>
 	        </select>  											
 		</div>
 	</div>
@@ -76,7 +70,7 @@
 
 	<label class="font-weight-bold mt-4">What is your estimated budget? <span class="text-warning"> *</span></label>
 	<div class="row my-2">
-		<div class="col-md-6 ">
+		{{-- <div class="col-md-6 ">
 			
 			<select class="form-control select2 form-control-lg" name="" data-autofocus="true"  style="font-size: 16px;">
 				<option>1</option>
@@ -84,28 +78,23 @@
 	            <option>3</option>
 	        </select> 
 
-		</div>
-		<div class="col-md-6 ">
+		</div> --}}
+		<div class="col-sm-12 ">
 			
 			<select class="form-control select2 form-control-lg" name="" data-autofocus="true"  style="font-size: 16px;">
-				<option>1</option>
-	            <option>2</option>
-	            <option>3</option>
+				<option>Customize Budget</option>
+	            <option>Negotiable</option>
 	        </select>  											
 		</div>
 	</div>
 
-	<div class="row mt-4">
+	<div class="row mt-4 form-group">
 
-		<div class="col-md-6 col-lg-6 col-sm-12">
+		<div class="col-md-6 col-lg-6 col-sm-12 ">
 			<input type="number" data-autofocus="true" class="form-control w-100" placeholder ="Min amount(MMK)" style="height: 40px;" value="">											
 		</div>
-	</div>
-
-	<div class="row">
-
-		<div class="col-md-6 col-lg-6 col-sm-12 my-2">
-		<input type="number" data-autofocus="true" class="form-control w-100 " placeholder ="Max amount(MMK)" style="height: 40px;" value="">											
+		<div class="col-md-6 col-lg-6 col-sm-12 ">
+			<input type="number" data-autofocus="true" class="form-control w-100 " placeholder ="Max amount(MMK)" style="height: 40px;" value="">	
 		</div>
 	</div>
 

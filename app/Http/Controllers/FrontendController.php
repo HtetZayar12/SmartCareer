@@ -36,8 +36,8 @@ class FrontendController extends Controller
 
 	}
 
-	public function projectform($value='')
-	{
-	return view('frontend.projectform');
-	}
+	// public function projectform($value='')
+	// {
+	// return view('frontend.projectform');
+	// }
 }

@@ -40,7 +40,7 @@ Route::resource('user','UserController');
 
 
 
-Route::get('jobs', 'FrontendController@find_freelancer')->name('freelancerpage');
-Route::get('postproject', 'FrontendController@projectform')->name('projectform');
+Route::get('find', 'FrontendController@find_freelancer')->name('freelancerpage');
+// Route::get('postproject', 'FrontendController@projectform')->name('projectform');
 
 

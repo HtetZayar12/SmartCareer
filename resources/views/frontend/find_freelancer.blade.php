@@ -1,7 +1,7 @@
 @extends('frontendtemplate')
 @section('content')
 <div class="container-fluid mb-5" >
-<!-- <<<<<<< HEAD -->
+
 		<div class="row">
 			<div class="col-md-3 mt-5 d-none d-sm-block">
 				<div class="container-fluid">
@@ -60,7 +60,7 @@
 						</div>
 					</div>
 
-<!-- <<<<<<< HEAD -->
+
 
 					
 
@@ -142,7 +142,6 @@
 		</div>
 	</div>
 </div>
-<!-- <<<<<<< HEAD -->
 
 
 

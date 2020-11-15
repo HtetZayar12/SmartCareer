@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Job;
+use App\Category;
+use App\Subcategory;
 use Illuminate\Http\Request;
 
 class JobController extends Controller
@@ -14,7 +16,9 @@ class JobController extends Controller
      */
     public function index()
     {
-        //
+        $subcategories = Subcategory::all();
+        $categories = Category::all();
+        return view('frontend.projectform',compact('categories', 'subcategories'));
     }
 
     /**

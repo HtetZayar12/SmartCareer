@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>SmartCarrer</title>
-    <link rel="stylesheet" href="{{asset('frontend_asset/bootstrap/css/bootstrap.min.css')}}">
+{{--     <link rel="stylesheet" href="{{asset('frontend_asset/bootstrap/css/bootstrap.min.css')}}"> --}}
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="{{asset('frontend_asset/css/Pretty-Footer.css')}}">
     <link rel="stylesheet" href="{{asset('frontend_asset/css/styles.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend_asset/bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('frontend_asset/css/main.css')}}">
 </head>
 
@@ -38,7 +39,7 @@
                         href="{{route('freelancerpage')}}">Find Freelancers</a></li>
                     <li class="nav-item" style="padding-right: 20px;"><a class="nav-link" href="#">How it works</a></li>
                     <li class="nav-item" style="padding-right: 20px;"><a class="nav-link" 
-                        href="{{route('projectform')}}">Projects</a></li>
+                        href="{{route('job.index')}}">Projects</a></li>
                     <li class="nav-item"><a class="nav-link text-center" href="#">Shop</a></li>
                 </ul>
                 <ul class="nav navbar-nav ml-auto">
