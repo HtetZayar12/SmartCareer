@@ -56,6 +56,15 @@ footer {
   text-decoration: none;
 }
 
+.footer-contacts h4 {
+  display: block;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
 .fa.footer-contacts-icon {
   background-color: #33383b;
   color: #fff;
@@ -80,15 +89,16 @@ span.new-line-span {
 .footer-about h4 {
   display: block;
   color: #fff;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  margin-top: 10px;
 }
 
 .footer-about p {
   line-height: 20px;
   color: #92999f;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: normal;
   margin: 0;
 }
@@ -111,5 +121,9 @@ div.social-links {
   line-height: 35px;
   margin-right: 5px;
   margin-bottom: 5px;
+}
+
+.clear{
+  clear: both;
 }
 

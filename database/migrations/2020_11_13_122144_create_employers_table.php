@@ -20,11 +20,17 @@ class CreateEmployersTable extends Migration
             $table->text('address');
             $table->timestamps();
 
+            $table->unsignedBigInteger('subcategory_id');
             $table->unsignedBigInteger('user_id');
 
             $table->foreign('user_id')
                     ->references('id')
                     ->on('users')
+                    ->onDelete('cascade');
+
+            $table->foreign('subcategory_id')
+                    ->references('id')
+                    ->on('subcategories')
                     ->onDelete('cascade');
         });
     }

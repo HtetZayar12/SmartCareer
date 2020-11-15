@@ -20,6 +20,9 @@ Route::resource('subcategory','SubcategoryController');
 Route::resource('salary','SalaryController');
 Route::resource('location','LocationController');
 
+//Frontend
+
+Route::resource('job','JobController');
 
 //Employer And Freelancer
 Route::resource('employer','EmployerController');
@@ -27,12 +30,17 @@ Route::resource('freelancer','FreelancerController');
 
 Route::get('signin', 'FrontendController@signin')->name('signinpage');
 Route::get('signup', 'FrontendController@signup')->name('signuppage');
+Route::get('/', 'FrontendController@home')->name('mainpage');
+Route::get('profile', 'FrontendController@profile')->name('profilepage');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('user','UserController');
 
-Route::get('freelancer', 'FrontendController@find_freelancer')->name('freelancerpage');
+
+
+Route::get('jobs', 'FrontendController@find_freelancer')->name('freelancerpage');
 Route::get('postproject', 'FrontendController@projectform')->name('projectform');
+
 
