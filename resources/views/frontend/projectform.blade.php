@@ -94,33 +94,17 @@
 	</div>
 
 
-	<label class="font-weight-bold mt-4">What is your estimated budget? <span class="text-warning"> *</span></label>
-	<div class="row my-2">
-		{{-- <div class="col-md-6 ">
-			
-			<select class="form-control select2 form-control-lg" name="" data-autofocus="true"  style="font-size: 16px;">
-				<option>1</option>
-	            <option>2</option>
-	            <option>3</option>
-	        </select> 
-
-		</div> --}}
-		<div class="col-sm-12 ">
-			
-			<select class="form-control select2 form-control-lg" name="" data-autofocus="true"  style="font-size: 16px;">
-				<option>Customize Budget</option>
-	            <option>Negotiable</option>
-	        </select>  											
-		</div>
-	</div>
-	
 	<div class="row mt-4 form-group">
+		<div class="col-sm-12 my-2 ">
+			
+			<label class="font-weight-bold">Choose Budget <span class="text-warning"> *</span></label>
 
-		<div class="col-md-6 col-lg-6 col-sm-12 ">
-			<input type="number" data-autofocus="true" class="form-control w-100" placeholder ="Min amount(MMK)" style="height: 40px;" value="">											
-		</div>
-		<div class="col-md-6 col-lg-6 col-sm-12 ">
-			<input type="number" data-autofocus="true" class="form-control w-100 " placeholder ="Max amount(MMK)" style="height: 40px;" value="">	
+			<select class="form-control select2 form-control-lg" name="salary" data-autofocus="true"  style="font-size: 16px;">
+				@foreach($salaries as $salary)
+					<option value="{{$salary->id}}">{{$salary->amount}}</option>
+				@endforeach
+	        </select>  
+									
 		</div>
 	</div>
 

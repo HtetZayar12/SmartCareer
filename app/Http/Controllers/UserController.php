@@ -10,6 +10,7 @@ use Auth;
 class UserController extends Controller
 {
 
+
     
     /**
      * Display a listing of the resource.
@@ -63,8 +64,7 @@ class UserController extends Controller
             return redirect()->route('freelancer.index');
         }else{
             $user->assignRole('employer');
-            Auth::login($user);
-           
+            Auth::login($user);           
             return redirect()->route('employer.index');
         }
 

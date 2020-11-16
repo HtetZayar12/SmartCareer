@@ -40,11 +40,12 @@
                         href="{{route('freelancerpage')}}">Find Freelancers</a></li>
                     <li class="nav-item" style="padding-right: 20px;"><a class="nav-link" href="{{route('aboutpage')}}">How it works</a></li>
                     <li class="nav-item" style="padding-right: 20px;"><a class="nav-link" 
-                        href="{{route('job.index')}}">Projects</a></li>
+                        href="{{-- {{route('job.index')}} --}}">Projects</a></li>
                     <li class="nav-item"><a class="nav-link text-center" href="{{route('shoppage')}}">Shop</a></li>
                 </ul>
                 <ul class="nav navbar-nav ml-auto">
                     @auth
+                    <li class="nav-item"><a class="btn btn-primary ml-auto" role="button" href="{{route('job.create')}}">Post a Project</a></li>
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
