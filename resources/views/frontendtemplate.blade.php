@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>SmartCarrer</title>
 {{--     <link rel="stylesheet" href="{{asset('frontend_asset/bootstrap/css/bootstrap.min.css')}}"> --}}
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
@@ -37,10 +38,10 @@
                 <ul class="nav navbar-nav text-center mx-auto ml-auto">
                     <li class="nav-item" style="padding-right: 20px;"><a class="nav-link active" 
                         href="{{route('freelancerpage')}}">Find Freelancers</a></li>
-                    <li class="nav-item" style="padding-right: 20px;"><a class="nav-link" href="#">How it works</a></li>
+                    <li class="nav-item" style="padding-right: 20px;"><a class="nav-link" href="{{route('aboutpage')}}">How it works</a></li>
                     <li class="nav-item" style="padding-right: 20px;"><a class="nav-link" 
                         href="{{route('job.index')}}">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link text-center" href="#">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link text-center" href="{{route('shoppage')}}">Shop</a></li>
                 </ul>
                 <ul class="nav navbar-nav ml-auto">
                     @auth
@@ -90,18 +91,18 @@
                 <div class="col-sm-6 col-md-4 footer-about"> 
                     <h4 class="text-uppercase">Browse</h4>
                     <p class="mb-3">
-                        <a href="#" class="text-decoration-none">Find Freelancers</a>
+                        <a href="{{route('freelancerpage')}}" class="text-decoration-none">Find Freelancers</a>
                     </p>
                     <p class="mb-3">
-                        <a href="#" class="text-decoration-none">How it works</a>
+                        <a href="{{route('aboutpage')}}" class="text-decoration-none">How it works</a>
                     <p class="mb-3">
-                        <a href="#" class="text-decoration-none">Projects</a>
+                        <a href="{{route('job.index')}}" class="text-decoration-none">Projects</a>
                     </p>
                     <p class="mb-3">
-                        <a href="#" class="text-decoration-none">Log in</a>
+                        <a href="{{route('signinpage')}}" class="text-decoration-none">Log in</a>
                     </p>
                     <p class="mb-3">
-                        <a href="#" class="text-decoration-none">Create Account</a>
+                        <a href="{{route('signuppage')}}" class="text-decoration-none">Create Account</a>
                     </p>
                 </div>
                 <div class="col-sm-6 col-md-4 footer-contacts">

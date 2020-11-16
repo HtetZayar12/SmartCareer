@@ -56,8 +56,13 @@
                                         <button class="btn btn-primary btn-block text-white btn-user" type="submit">Login</button>
                                         <hr>
                                     </form>
-                                    <div class="text-center"><a class="small" href="forgot-password.html">Forgot Password?</a></div>
-                                    <div class="text-center"><a class="small" href="register.html">Create an Account!</a></div>
+                                    <div class="text-center">
+                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                    </div>
+                                    <div class="text-center">
+                                        <a class="small" 
+                                    href="{{route('signuppage')}}">Create an Account!</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

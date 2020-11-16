@@ -32,6 +32,8 @@ Route::get('signin', 'FrontendController@signin')->name('signinpage');
 Route::get('signup', 'FrontendController@signup')->name('signuppage');
 Route::get('/', 'FrontendController@home')->name('mainpage');
 Route::get('profile', 'FrontendController@profile')->name('profilepage');
+Route::get('shop', 'FrontendController@shop')->name('shoppage');
+Route::get('about', 'FrontendController@about')->name('aboutpage');
 
 Auth::routes();
 
