@@ -41,6 +41,7 @@ Route::resource('user','UserController');
 
 
 Route::get('find', 'FrontendController@find_freelancer')->name('freelancerpage');
+Route::get('freelancerdetail/{id}','FrontendController@freelancerdetail')->name('freelancerdetail');
 // Route::get('postproject', 'FrontendController@projectform')->name('projectform');
 
 
