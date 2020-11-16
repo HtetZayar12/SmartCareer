@@ -27,8 +27,9 @@
                                      <form class="user" method="POST" action="{{ route('freelancer.store') }}" enctype="multipart/form-data">
                                         @csrf
                                         @foreach($users as $row)
-                                        <input type="hidden" name="userid" value="{{$row->id}}">
+                                        <input type="hidden" name="user_id" value="{{$row->id}}">
                                         @endforeach
+
                                         <div class="form-group row">
                                             <label for="photo_id" class="col-sm-2 col-form-label"> Photo (<small class="text-danger">* jpeg|png</small>) </label>
                                             <div class="col-sm-10">
@@ -61,6 +62,20 @@
                                                 </span>
                                                 @enderror
                                             </div>
+                                        </div>
+                                       
+
+                                        <div class="form-group row">
+                                        <label for="addr" class="col-sm-2 col-form-label">Subcategory:</label>
+                                        <div class="col-sm-10">
+                                        <select name="subcategory" class="form-control" id="addr" rows="4">
+                                        <optgroup label="Choose Name">
+                                        @foreach($subcategories as $subcategory)
+                                        <option value="{{$subcategory->id}}">{{$subcategory->name}}</option>
+                                        @endforeach
+                                        </optgroup>
+                                        </select>
+                                        </div>
                                         </div>
                                         <button class="btn btn-primary px-5 float-right my-4 text-white btn-user" type="submit">Save</button>
                                      </form>
