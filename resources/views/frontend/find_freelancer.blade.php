@@ -34,60 +34,41 @@
 
 
 		<div class="col-md-9" >
-			<h4 class="mb-5 text-info"> 1000 / 34223 freelancers founded for you</h4>			
+			<h4 class="mb-5 text-info"> 1000 / 34223 freelancers founded for you</h4>		
+
+			
 
 			<div class="row">
 				
 				<div class="jobs">
+					@foreach($freelancers as $freelancer)
+					<a href="{{route('freelancerdetail',$freelancer->id)}}">
 						<div class="col-md-12 col-lg-12 col-sm-12 mb-5 w-100" >
 						<div class="shadow bg-white rounded">
-							
+
 					  		<div class="card-body">
-						  		<img src="#" class="w-10 rounded-circle">
-						  		<span><a href="#" class="text-decoration-none ">name</a></span>
+						  		<img src="{{asset($freelancer->photo)}}" width="100px" height="100px" class="rounded-circle">
+						  		
+								
+						  		<span><a href="#" class="text-decoration-none "></a>{{$freelancer->user->name}}</span>
+						  		
+						  	
+                                 
 						  		<hr class="bg-faded">
-						  		<h5><a href="#" class="text-decoration-none py-5">iOS Developer </a></h5>
+						  	
+						  		<h5><a href="#" class="text-decoration-none py-5">{{$freelancer->subcategory->name}}</a></h5>
 					    		
 
-					    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					    		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					    		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					    		<p>{{$freelancer->description}}
 				                </p>
 
 				                <hr class="bg-faded">
 
 					    			<span class="badge badge-pill badge-primary">&nbsp;Swift&nbsp;</span>
 
-					    			<span class="badge badge-pill badge-primary">&nbsp;Angular JS&nbsp;</span>							    			
-					  		</div>
-						</div>
-					</div>
-					
+					    			<span class="badge badge-pill badge-primary">&nbsp;Angular JS&nbsp;</span>		
 
-
-
-					
-
-					<div class="col-md-12 col-lg-12 col-sm-12 mb-5 w-100" >
-						<div class="shadow bg-white rounded">
-					  		<div class="card-body">
-						  		<img src="#" class="w-10 rounded-circle">
-						  		<span><a href="#" class="text-decoration-none ">Name</a></span>
-						  		<hr class="bg-faded">
-					    		<h5><a href="#" class="text-decoration-none">Fullstack Developer </a></h5>
-					    		
-					    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					    		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					    		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				                </p>
-
-				                <hr class="bg-faded">
-
-					    				<span class="badge badge-pill badge-primary">&nbsp;Java&nbsp;</span>
-					    			
-					    								    			
-					    				
-					    				<span class="badge badge-pill badge-primary">&nbsp;PHP&nbsp;</span>
+					    			<span class="badge badge-pill badge-primary">&nbsp;PHP&nbsp;</span>
 					    			
 					    								    			
 					    				
@@ -120,11 +101,15 @@
 					    								    			
 					    				
 					    				<span class="badge badge-pill badge-primary">&nbsp;React&nbsp;</span>
-				    			
+
+					    				
+				    								    			
 					  		</div>
 						</div>
 					</div>
-
+				</a>
+					@endforeach
+					
 					<div class="offset-md-9 offset-7">
 						<nav>
 	   				 		<ul class="pagination">            
@@ -142,7 +127,8 @@
 						</nav>
 					</div>
 				</div>
-			</div>		
+			</div>	
+				
 		</div>
 	</div>
 </div>
