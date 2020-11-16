@@ -10,9 +10,9 @@ use Auth;
 class UserController extends Controller
 {
 
-    public function __construct(){
-        $this->middleware('auth');
-    }
+    // public function __construct(){
+    //     $this->middleware('auth');
+    // }
     /**
      * Display a listing of the resource.
      *
@@ -65,8 +65,7 @@ class UserController extends Controller
             return redirect()->route('freelancer.index');
         }else{
             $user->assignRole('employer');
-            Auth::login($user);
-           
+            Auth::login($user);           
             return redirect()->route('employer.index');
         }
 

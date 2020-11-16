@@ -34,7 +34,7 @@
 
 
 		<div class="col-md-9" >
-			<h4 class="mb-5 text-info"> 1000 / 34223 freelancers founded for you</h4>			
+			<h4 class="mb-5 text-info"> jobs founded near you</h4>			
 
 			<div class="row">
 				
