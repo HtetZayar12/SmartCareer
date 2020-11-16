@@ -8,4 +8,4 @@ class Employer extends Model
 {
     protected $fillable = ['photo','description','address','subcategory_id','user_id'];
 }
-}
+

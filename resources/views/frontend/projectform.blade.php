@@ -1,6 +1,10 @@
 @extends('frontendtemplate')
 @section('content')
 <form method="post" action="{{route('job.store')}}" class="col-lg-6 offset-lg-3">
+	@csrf
+	@foreach($users as $row)
+    	<input type="hidden" name="user" value="{{$row->id}}">
+    @endforeach
 	<div class="row my-2">
 		<div class="col-md-12 col-lg-12 col-sm-12 my-2">
 
@@ -14,7 +18,7 @@
 
 			<label class="font-weight-bold">Choose Category <span class="text-warning"> *</span></label>
 
-			<select class="form-control select2 form-control-lg" name="" data-autofocus="true"  style="font-size: 16px;">
+			<select class="form-control select2 form-control-lg" name="category" data-autofocus="true"  style="font-size: 16px;">
               @foreach($categories as $category)
               <option value="{{$category->id}}">{{$category->name}}</option>
               @endforeach
@@ -28,7 +32,7 @@
 			
 			<label class="font-weight-bold">Choose Subcategory <span class="text-warning"> *</span></label>
 
-			<select class="form-control select2 form-control-lg" name="" data-autofocus="true"  style="font-size: 16px;">
+			<select class="form-control select2 form-control-lg" name="subcategory" data-autofocus="true"  style="font-size: 16px;">
 				@foreach($subcategories as $subcategory)
 					<option value="{{$subcategory->id}}">{{$subcategory->name}}</option>
 				@endforeach
@@ -37,8 +41,22 @@
 		</div>
 	</div>
 
-	{{-- <div class="row my-2">
-		<div class="col-md-12 col-lg-12 col-sm-12 mt-4">
+	<div class="row my-2">
+		<div class="col-sm-12 my-2 ">
+			
+			<label class="font-weight-bold">Choose Location <span class="text-warning"> *</span></label>
+
+			<select class="form-control select2 form-control-lg" name="location" data-autofocus="true"  style="font-size: 16px;">
+				@foreach($locations as $location)
+					<option value="{{$location->id}}">{{$location->name}}</option>
+				@endforeach
+	        </select>  
+									
+		</div>
+	</div>
+
+	<div class="row my-2">
+		<div class="col-sm-12 mt-4">
 
 			<label class="font-weight-bold">What skills should that freelancer have? <span class="text-warning"> *</span></label>
 			<div class="form-group">
@@ -48,17 +66,25 @@
 			</div>
 
 		</div>
-	</div> --}}
+	</div>
+
+	<div class="row">
+		<div class="col-sm-12 mt-4">
+			<label class="font-weight-bold">Close Date<span class="text-warning">*</span></label>
+
+			<input type="Date" name="closedate" class="form-control">
+		</div>
+	</div>
 
 	<label class="font-weight-bold mt-4">When do you want to finish your project? <span class="text-warning"> *</span></label>
 	<div class="row my-2">
 		<div class="col-md-6 col-lg-6 col-sm-12">
 		
-			<input type="number" data-autofocus="true" class="form-control w-100" placeholder ="Duration" style="height: 40px;" value="">												
+			<input type="number" name="duration" data-autofocus="true" class="form-control w-100" placeholder ="Duration" style="height: 40px;" value="">												
 		</div>
 		<div class="col-md-6 ">
 			
-			<select class="form-control select2 form-control-lg" name="" data-autofocus="true"  style="font-size: 16px;">
+			<select class="form-control select2 form-control-lg" name="dur_type" data-autofocus="true"  style="font-size: 16px;">
 				<option>Hour</option>
 	            <option>Day</option>
 	            <option>Month</option>
@@ -87,7 +113,7 @@
 	        </select>  											
 		</div>
 	</div>
-
+	
 	<div class="row mt-4 form-group">
 
 		<div class="col-md-6 col-lg-6 col-sm-12 ">

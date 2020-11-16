@@ -27,6 +27,16 @@ class FrontendController extends Controller
 	public function profile($value='')
 	{
 	return view('frontend.profile');
+	}
+
+	public function shop($value='')
+	{
+	return view('frontend.shop');
+	}
+
+	public function about($value='')
+	{
+	return view('frontend.howitwork');
 	}	
 
 	public function find_freelancer($value='')

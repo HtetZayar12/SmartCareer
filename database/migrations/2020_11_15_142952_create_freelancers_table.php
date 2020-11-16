@@ -18,8 +18,6 @@ class CreateFreelancersTable extends Migration
             $table->text('photo');
             $table->text('description');
             $table->text('address');
-
-
             $table->unsignedBigInteger('subcategory_id');
             $table->unsignedBigInteger('user_id');
 

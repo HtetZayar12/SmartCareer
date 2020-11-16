@@ -16,7 +16,7 @@ class FreelancerController extends Controller
     public function index()
     {
         $users = User::all(); 
-       return view('frontend.freelanceinfo',compact('users'));
+        return view('frontend.freelanceinfo',compact('users'));
     }
 
     /**
