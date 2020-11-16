@@ -36,12 +36,14 @@
 			<h4 class="mb-5 text-info"> 1000 / 34223 freelancers founded for you</h4>			
 
 			<div class="row">
+				
 				<div class="jobs">
-					<div class="col-md-12 col-lg-12 col-sm-12 mb-5 w-100" >
+						<div class="col-md-12 col-lg-12 col-sm-12 mb-5 w-100" >
 						<div class="shadow bg-white rounded">
+							
 					  		<div class="card-body">
 						  		<img src="#" class="w-10 rounded-circle">
-						  		<span><a href="#" class="text-decoration-none ">Name</a></span>
+						  		<span><a href="#" class="text-decoration-none ">name</a></span>
 						  		<hr class="bg-faded">
 						  		<h5><a href="#" class="text-decoration-none py-5">iOS Developer </a></h5>
 					    		
@@ -59,6 +61,7 @@
 					  		</div>
 						</div>
 					</div>
+					
 
 
 

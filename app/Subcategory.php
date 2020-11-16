@@ -12,5 +12,9 @@ class Subcategory extends Model
   {
       return $this->belongsTo('App\Category');
   }
+    public function freelancers()
+  {
+      return $this->hasMany('App\Freelancer');
+  }
 
 }

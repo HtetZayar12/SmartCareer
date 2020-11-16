@@ -5,9 +5,14 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Auth;
 
 class UserController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -56,13 +61,18 @@ class UserController extends Controller
 
         if ($request->radio == "freelancer") {
             $user->assignRole('freelancer');
+            Auth::login($user);
             return redirect()->route('freelancer.index');
         }else{
             $user->assignRole('employer');
+            Auth::login($user);
+           
             return redirect()->route('employer.index');
         }
 
     }
+
+
 
     /**
      * Display the specified resource.
