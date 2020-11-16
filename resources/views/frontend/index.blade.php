@@ -23,7 +23,7 @@
                      <div class="jumbotron pulse animated hero-technology carousel-hero" style="height: 564px;background-image: url({{asset('frontend_asset/img/architect-at-the-construction.jpg')}})">
                          <h1 class="hero-title"><br><strong>Reliable professionals for your business</strong><br><br></h1>
                          <p class="hero-subtitle" style="color: rgb(8,8,8);">SmartCareer connects business with freelancers to accomplish quality works on time.</p>
-                         <p><a class="btn btn-primary hero-button plat" role="button" href="#">Post a Project</a></p>
+                         <p><a class="btn btn-primary hero-button plat" role="button" href="{{route('job.create')}}">Post a Project</a></p>
                      </div>
                  </div>
               </div>

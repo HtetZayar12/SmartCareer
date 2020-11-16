@@ -16,21 +16,28 @@ class CreateJobsTable extends Migration
         Schema::create('jobs', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('skill one');
-            $table->string('skill two');
-            $table->string('skill three');
-            $table->integer('duration');
+            $table->string('skill_one');
+            $table->string('skill_two');
+            $table->string('skill_three');
+            $table->text('duration');
             $table->date('closedate');
             $table->text('description');
             $table->unsignedBigInteger('location_id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('subcategory_id');
+            $table->unsignedBigInteger('salary_id');
             $table->timestamps();
 
             $table->foreign('subcategory_id')
                     ->references('id')
                     ->on('subcategories')
                     ->onDelete('cascade');
+
+            $table->foreign('salary_id')
+                    ->references('id')
+                    ->on('salaries')
+                    ->onDelete('cascade');
+
 
             $table->foreign('location_id')
                     ->references('id')
