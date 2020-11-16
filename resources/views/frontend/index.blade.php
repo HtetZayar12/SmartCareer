@@ -41,66 +41,19 @@
   </div>
   <div class="container">
       <div class="row" style="font-family: Montserrat, sans-serif;">
-          <div class="col-lg-4 col-md-6 mb-3">
-              <div class="card bg-white text-dark">
-                  <img class="card-img" src="{{asset('frontend_asset/img/campaign-creators-OGOWDVLbMSc-unsplash.jpg')}}" alt="Card image" style="opacity: 0.2;">
-                  <div class="card-img-overlay">
-                    <h5 class="card-title">Web and Mobile</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-3">
-              <div class="card bg-white text-dark">
-                  <img class="card-img " src="{{asset('frontend_asset/img/campaign-creators-OGOWDVLbMSc-unsplash.jpg')}}" alt="Card image" style="opacity: 0.2;">
-                  <div class="card-img-overlay">
-                    <h5 class="card-title">Graphic design</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-3">
-              <div class="card bg-white text-dark">
-                  <img class="card-img" src="{{asset('frontend_asset/img/campaign-creators-OGOWDVLbMSc-unsplash.jpg')}}" alt="Card image" style="opacity: 0.2;">
-                  <div class="card-img-overlay">
-                   <h5 class="card-title">Content writing</h5>
-                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                   <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-3">
-              <div class="card bg-white text-dark">
-                  <img class="card-img" src="{{asset('frontend_asset/img/campaign-creators-OGOWDVLbMSc-unsplash.jpg')}}" alt="Card image" style="opacity: 0.2;">
-                  <div class="card-img-overlay">
-                    <h5 class="card-title">Sales and Marketing</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-3">
-              <div class="card bg-white text-dark">
-                  <img class="card-img" src="{{asset('frontend_asset/img/campaign-creators-OGOWDVLbMSc-unsplash.jpg')}}" alt="Card image" style="opacity: 0.2;">
-                  <div class="card-img-overlay">
-                    <h5 class="card-title">Translation</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-          </div>
+        
+         @foreach($categories as $category)
           <div class="col-lg-4 col-md-6 mb-3 " style="width: 20px;">
              <div class="card bg-white text-dark">
-                 <img class="card-img" src="{{asset('frontend_asset/img/campaign-creators-OGOWDVLbMSc-unsplash.jpg')}}" alt="Card image" style="opacity: 0.2;">
-                 <div class="card-img-overlay">
-                   <h5 class="card-title">Part time jobs</h5>
-                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                   <a href="#" class="btn btn-primary">Go somewhere</a>
+                 <img class="card-img h-75 w-100" src="{{asset($category->photo)}}" alt="Card image" >
+                 <div class="card-img-overlay " style="margin: 110px 30px;">
+                   @foreach($category->subcategories as $subcategory)
+                   <a href="#" class="btn btn-primary">{{$subcategory->name}}</a>
+                   @endforeach
                  </div>
                </div>
           </div>
+          @endforeach
      </div>
  </div>
  @endsection
