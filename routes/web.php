@@ -15,10 +15,13 @@ use Illuminate\Support\Facades\Route;
 
 
 //For Backend
-Route::resource('category','CategoryController');
-Route::resource('subcategory','SubcategoryController');
-Route::resource('salary','SalaryController');
-Route::resource('location','LocationController');
+
+Route::middleware('role:admin')->group(function () {
+	Route::resource('category','CategoryController');
+	Route::resource('subcategory','SubcategoryController');
+	Route::resource('salary','SalaryController');
+	Route::resource('location','LocationController');
+});
 
 //Frontend
 

@@ -1,5 +1,6 @@
 @extends('frontendtemplate')
 @section('content')
+
 <form method="post" action="{{route('job.store')}}" class="col-lg-6 offset-lg-3">
 	@csrf
 	@foreach($users as $row)
@@ -129,4 +130,5 @@
 
 	<input type="submit" name="" value="Yes, Post My Project" class="btn btn-info my-4">
 </form>
+
 @endsection
