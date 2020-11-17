@@ -24,7 +24,8 @@ class FrontendController extends Controller
 
 	public function home($value='')
 	{
-	return view('frontend.index');
+	$categories=Category::all();
+	return view('frontend.index' ,compact('categories'));
 	}
 
 	public function profile($value='')

@@ -5,21 +5,22 @@
           <div class="carousel slide" data-ride="carousel" id="carousel-1">
               <div class="carousel-inner">
                  <div class="carousel-item" style="height: 564px;">
-                     <div class="jumbotron pulse animated hero-nature carousel-hero" style="height: 564px;">
-                         <h1 class="hero-title">Hero Nature</h1>
-                         <p class="hero-subtitle">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+                      {{-- <img src="{{asset('frontend_asset/img/young-college-students.jpg')}}"" alt="" class="d-block w-100"> --}}
+                     <div class="jumbotron pulse animated hero-nature carousel-hero" style="background-image: url({{asset('frontend_asset/img/young-college-students.jpg')}});height: 564px;">
+                         <h1 class="hero-title">Save your valueable time</h1>
+                         <p class="hero-subtitle">You can save time for you and your company.You can find a lot of freelancers according to your project and hire now.</p>
                          <p><a class="btn btn-primary hero-button plat" role="button" href="#">Learn more</a></p>
                      </div>
                  </div>
                  <div class="carousel-item" style="height: 564px;">
-                     <div class="jumbotron pulse animated hero-photography carousel-hero" style="height: 564px;">
+                     <div class="jumbotron pulse animated hero-photography carousel-hero" style="height: 564px;background-image: url({{asset('frontend_asset/img/architects-and-worker.jpg')}})">
                          <h1 class="hero-title">Hero Photography</h1>
                          <p class="hero-subtitle">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
                          <p><a class="btn btn-primary hero-button plat" role="button" href="#">Learn more</a></p>
                      </div>
                  </div>
                  <div class="carousel-item active">
-                     <div class="jumbotron pulse animated hero-technology carousel-hero">
+                     <div class="jumbotron pulse animated hero-technology carousel-hero" style="height: 564px;background-image: url({{asset('frontend_asset/img/architect-at-the-construction.jpg')}})">
                          <h1 class="hero-title"><br><strong>Reliable professionals for your business</strong><br><br></h1>
                          <p class="hero-subtitle" style="color: rgb(8,8,8);">SmartCareer connects business with freelancers to accomplish quality works on time.</p>
                          <p><a class="btn btn-primary hero-button plat" role="button" href="{{route('job.create')}}">Post a Project</a></p>
@@ -41,66 +42,19 @@
   </div>
   <div class="container">
       <div class="row" style="font-family: Montserrat, sans-serif;">
-          <div class="col-lg-4 col-md-6 mb-3">
-              <div class="card bg-white text-dark">
-                  <img class="card-img" src="{{asset('frontend_asset/img/campaign-creators-OGOWDVLbMSc-unsplash.jpg')}}" alt="Card image" style="opacity: 0.2;">
-                  <div class="card-img-overlay">
-                    <h5 class="card-title">Web and Mobile</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-3">
-              <div class="card bg-white text-dark">
-                  <img class="card-img " src="{{asset('frontend_asset/img/campaign-creators-OGOWDVLbMSc-unsplash.jpg')}}" alt="Card image" style="opacity: 0.2;">
-                  <div class="card-img-overlay">
-                    <h5 class="card-title">Graphic design</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-3">
-              <div class="card bg-white text-dark">
-                  <img class="card-img" src="{{asset('frontend_asset/img/campaign-creators-OGOWDVLbMSc-unsplash.jpg')}}" alt="Card image" style="opacity: 0.2;">
-                  <div class="card-img-overlay">
-                   <h5 class="card-title">Content writing</h5>
-                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                   <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-3">
-              <div class="card bg-white text-dark">
-                  <img class="card-img" src="{{asset('frontend_asset/img/campaign-creators-OGOWDVLbMSc-unsplash.jpg')}}" alt="Card image" style="opacity: 0.2;">
-                  <div class="card-img-overlay">
-                    <h5 class="card-title">Sales and Marketing</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-3">
-              <div class="card bg-white text-dark">
-                  <img class="card-img" src="{{asset('frontend_asset/img/campaign-creators-OGOWDVLbMSc-unsplash.jpg')}}" alt="Card image" style="opacity: 0.2;">
-                  <div class="card-img-overlay">
-                    <h5 class="card-title">Translation</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-          </div>
+        
+         @foreach($categories as $category)
           <div class="col-lg-4 col-md-6 mb-3 " style="width: 20px;">
              <div class="card bg-white text-dark">
-                 <img class="card-img" src="{{asset('frontend_asset/img/campaign-creators-OGOWDVLbMSc-unsplash.jpg')}}" alt="Card image" style="opacity: 0.2;">
-                 <div class="card-img-overlay">
-                   <h5 class="card-title">Part time jobs</h5>
-                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                   <a href="#" class="btn btn-primary">Go somewhere</a>
+                 <img class="card-img h-75 w-100" src="{{asset($category->photo)}}" alt="Card image" >
+                 <div class="card-img-overlay " style="margin: 110px 30px;">
+                   @foreach($category->subcategories as $subcategory)
+                   <a href="#" class="btn btn-primary">{{$subcategory->name}}</a>
+                   @endforeach
                  </div>
                </div>
           </div>
+          @endforeach
      </div>
  </div>
  @endsection
