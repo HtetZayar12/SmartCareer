@@ -33,12 +33,12 @@ class JobController extends Controller
      */
     public function create()
     {
-        $subcategories = Subcategory::all();
-        $categories = Category::all();
-        $locations = Location::all();
-        $users = User::all();
-        $salaries = Salary::all();
-        return view('frontend.projectform',compact('users','categories','subcategories','salaries','locations'));
+        // $subcategories = Subcategory::all();
+        // $categories = Category::all();
+        // $locations = Location::all();
+        // $users = User::all();
+        // $salaries = Salary::all();
+        // return view('frontend.projectform',compact('users','categories','subcategories','salaries','locations'));
     }
 
     /**
@@ -91,8 +91,8 @@ class JobController extends Controller
      */
     public function show(Job $job)
     {
-        $job = Job::find($job->id);
-        return view('frontend.jobdetail',compact('job'));
+        // $job = Job::find($job->id);
+        // return view('frontend.jobdetail',compact('job'));
     }
 
     /**

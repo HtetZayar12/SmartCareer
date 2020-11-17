@@ -81,8 +81,8 @@ class FreelancerController extends Controller
      */
     public function show(Freelancer $freelancer)
     {
-        $freelancers = Freelancer::find($freelancer->id);
-        return view('frontend.freelancerdetail',compact('freelancers'));
+        // $freelancers = Freelancer::find($freelancer->id);
+        // return view('frontend.freelancerdetail',compact('freelancers'));
     }
 
     /**

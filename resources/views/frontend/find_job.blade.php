@@ -41,11 +41,11 @@
 							<div class="card mb-5 shadow">
 								<div class="card-body px-5">
 									<div class="row">
-										<div class="col-sm-10">
+										<div class="col-sm-9">
 											<h5 class="font-weight-bold">{{$job->name}}</h5>
 										</div>
-										<div class="col-sm-2">
-											<h5 class="font-weight-bold">{{$job->salary->amount}}MMK</h5>
+										<div class="col-sm-3">
+											<h5 class="font-weight-bold float-right">{{$job->salary->amount}}MMK</h5>
 										</div>
 										<div class="col-sm-12">
 											<label>Close Date : </label>
@@ -55,14 +55,20 @@
 									<hr>
 									<p>{{$job->description}}</p>
 									<div class="row">
-										<div class="col-sm-9">
-											<p class="badge badge-pill badge-dark p-2">{{$job->skill_one}}</p>
-											<p class="badge badge-pill badge-dark p-2">{{$job->skill_two}}</p>
-											<p class="badge badge-pill badge-dark p-2">{{$job->skill_three}}</p>
+										<div class="col-sm-9 my-3">
+											<span class="badge-pill py-2 px-3 mr-3" style="background-color: #d3d6d8">
+								              {{$job->skill_one}}
+								            </span>
+								            <span class="badge-pill py-2 px-3 mr-3" style="background-color: #d3d6d8">
+								              {{$job->skill_two}}
+								            </span>
+								            <span class="badge-pill py-2 px-3 mr-3" style="background-color: #d3d6d8">
+								              {{$job->skill_three}}
+								            </span>
 										</div>
 
-										<div class="col-sm-3 float">
-											<a class="btn btn-info badge-pill px-3 float-right" href="{{route('job.show',$job->id)}}">Detail</a>
+										<div class="col-sm-3 my-3">
+											<a class="btn btn-info badge-pill px-5 float-right" href="{{route('jobdetail',$job->id)}}">Detail</a>
 										</div>
 									</div>
 								</div>
@@ -92,13 +98,5 @@
 	</div>
 </div>
 
-
-
-<script type="text/javascript" src="{{asset('frontend_asset/js/jquery.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('frontend_asset/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-
-
-</body>
-</html> 
 @endsection
 

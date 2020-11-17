@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{{asset('frontend_asset/fonts/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('frontend_asset/fonts/ionicons.min.css')}}">
     <link rel="stylesheet" href="{{asset('frontend_asset/css/best-carousel-slide.css')}}">
-    <link rel="stylesheet" href={{asset('frontend_asset/css/gradient-navbar-1.css')}}"">
+    {{-- <link rel="stylesheet" href={{asset('frontend_asset/css/gradient-navbar-1.css')}}""> --}}
     <link rel="stylesheet" href="{{asset('frontend_asset/css/gradient-navbar.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="{{asset('frontend_asset/css/Pretty-Footer.css')}}">
@@ -47,7 +47,7 @@
                 </ul>
                 <ul class="nav navbar-nav ml-auto">
                     @auth
-                    <li class="nav-item"><a class="btn btn-primary ml-auto" role="button" href="{{route('job.create')}}">Post a Project</a></li>
+                    <li class="nav-item"><a class="btn btn-primary ml-auto" role="button" href="{{route('projectform')}}">Post a Project</a></li>
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" v-pre>
                             {{ Auth::user()->name }}
@@ -126,6 +126,7 @@
     </footer>
     <script src="{{asset('frontend_asset/js/jquery.min.js')}}"></script>
     <script src="{{asset('frontend_asset/bootstrap/js/bootstrap.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('frontend_asset/js/custom.js')}}"></script>
     @yield('script')
 </body>
 

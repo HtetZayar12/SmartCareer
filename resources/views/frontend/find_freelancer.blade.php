@@ -38,7 +38,7 @@
 				<div class="col-sm-12">
 					<div class="jobs">
 						@foreach($freelancers as $freelancer)
-								<div class="card shadow">
+								<div class="card shadow mb-5">
 									<div class="card-body px-5">
 										<div class="row">
 											<div class="col-sm-2">
@@ -51,9 +51,9 @@
 										</div>
 										<hr>
 										<p>{{$freelancer->description}}</p>
-										<div class="offset-11">
-											<a class="btn btn-info badge-pill px-3" 
-											href="{{route('freelancer.show',$freelancer->id)}}">Detail</a>
+										<div>
+											<a class="btn btn-info badge-pill px-5 float-right" 
+											href="{{route('freelancerdetail',$freelancer->id)}}">Detail</a>
 										</div>
 									</div>
 								</div>
@@ -131,13 +131,5 @@
 	</div>
 </div> --}}
 
-
-
-<script type="text/javascript" src="{{asset('frontend_asset/js/jquery.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('frontend_asset/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-
-
-</body>
-</html> 
 @endsection
 

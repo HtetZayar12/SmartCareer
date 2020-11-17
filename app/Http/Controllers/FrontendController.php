@@ -7,6 +7,12 @@ use App\Category;
 Use App\Freelancer;
 Use App\Employer;
 Use App\User;
+Use App\Subcategory;
+Use App\Job;
+Use App\Location;
+Use App\Salary;
+
+Use Auth;
 
 
 class FrontendController extends Controller
@@ -35,8 +41,10 @@ class FrontendController extends Controller
 
 	public function shop($value='')
 	{
-	$employers = Employer::all();	
+	$employers = Auth::user()->id;
+	// dd($employers);	
 	return view('frontend.shop',compact('employers'));
+
 	}
 
 	public function about($value='')
@@ -54,15 +62,25 @@ class FrontendController extends Controller
 
 	}
 
-	// public function freelancerdetail($id)
-	// {
+	public function freelancerdetail($id)
+	{
+	$freelancers = Freelancer::find($id);
+	return view('frontend.freelancerdetail',compact('freelancers'));
+	}
 
-	// $freelancers = Freelancer::find($id);
-	// return view('frontend.freelancerdetail',compact('freelancers'));
-	// }
+	public function jobdetail($id)
+	{
+	$job = Job::find($id);
+	return view('frontend.jobdetail',compact('job'));
+	}
 
-	// public function projectform($value='')
-	// {
-	// return view('frontend.projectform');
-	// }
+	public function projectform($value='')
+	{
+	$subcategories = Subcategory::all();
+    $categories = Category::all();
+    $locations = Location::all();
+    $users = User::all();
+    $salaries = Salary::all();
+    return view('frontend.projectform',compact('users','categories','subcategories','salaries','locations'));
+	}
 }

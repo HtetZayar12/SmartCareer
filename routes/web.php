@@ -24,7 +24,9 @@ Route::middleware('role:admin')->group(function () {
 });
 
 //Frontend
-
+Route::middleware('role:admin')->group(function () {
+	Route::get('postproject', 'FrontendController@projectform')->name('projectform');
+});
 Route::resource('job','JobController');
 
 //Employer And Freelancer
@@ -47,6 +49,7 @@ Route::resource('user','UserController');
 
 Route::get('find', 'FrontendController@find_freelancer')->name('freelancerpage');
 Route::get('freelancerdetail/{id}','FrontendController@freelancerdetail')->name('freelancerdetail');
-// Route::get('postproject', 'FrontendController@projectform')->name('projectform');
+Route::get('jobdetail/{id}','FrontendController@jobdetail')->name('jobdetail');
+
 
 
