@@ -63,18 +63,6 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-group row">
-                                            <label for="addr" class="col-sm-2 col-form-label">Subcategory:</label>
-                                            <div class="col-sm-10">
-                                                <select name="subcategory" class="form-control" id="addr" rows="4">
-                                                <optgroup label="Choose Name">
-                                                @foreach($subcategories as $subcategory)
-                                                <option value="{{$subcategory->id}}">{{$subcategory->name}}</option>
-                                                @endforeach
-                                                </optgroup>
-                                                </select>
-                                            </div>
-                                        </div>
                                         <button class="btn btn-primary px-5 float-right my-4 text-white btn-user" type="submit">Save</button>
                                      </form>
                                  </div>
