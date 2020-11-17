@@ -15,7 +15,7 @@
                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                  </div>
                  <div class="card-footer text-muted">
-                     <a href="#" class="btn">Buy</a>
+                     <button href="#" class="btn badge-pill btn-info px-4">Buy</button>
                  </div>
                </div>
          </div>
@@ -25,11 +25,11 @@
                    <div class="font-weight-bold">250 Coins</div>
                  </div>
                  <div class="card-body">
-                   <h5 class="card-title">25000MMK</h5>
+                   <h5 class="card-title">22500MMK</h5>
                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                  </div>
                  <div class="card-footer text-muted">
-                     <a href="#" class="btn">Buy</a>
+                     <button href="#" class="btn badge-pill btn-info px-4">Buy</button>
                  </div>
                </div>
          </div>
@@ -39,11 +39,11 @@
                    <div class="font-weight-bold">500 Coins</div>
                  </div>
                  <div class="card-body">
-                   <h5 class="card-title">50000MMK</h5>
+                   <h5 class="card-title">45000MMK</h5>
                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                  </div>
                  <div class="card-footer text-muted">
-                     <a href="#" class="btn">Buy</a>
+                     <button class="btn badge-pill btn-info px-4">Buy</button>
                  </div>
                </div>
          </div>

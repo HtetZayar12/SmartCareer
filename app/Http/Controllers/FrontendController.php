@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Category;
 Use App\Freelancer;
+Use App\Employer;
 Use App\User;
 
 
@@ -33,7 +34,8 @@ class FrontendController extends Controller
 
 	public function shop($value='')
 	{
-	return view('frontend.shop');
+	$employers = Employer::all();	
+	return view('frontend.shop',compact('employers'));
 	}
 
 	public function about($value='')
@@ -51,12 +53,12 @@ class FrontendController extends Controller
 
 	}
 
-	public function freelancerdetail($id)
-	{
+	// public function freelancerdetail($id)
+	// {
 
-	$freelancers = Freelancer::find($id);
-	return view('frontend.freelancerdetail',compact('freelancers'));
-	}
+	// $freelancers = Freelancer::find($id);
+	// return view('frontend.freelancerdetail',compact('freelancers'));
+	// }
 
 	// public function projectform($value='')
 	// {

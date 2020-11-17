@@ -18,7 +18,7 @@ class CreateEmployersTable extends Migration
             $table->text('photo');
             $table->text('description');
             $table->text('address');
-
+            $table->text('coin')->nullable(true);
 
             $table->unsignedBigInteger('subcategory_id');
             $table->unsignedBigInteger('user_id');

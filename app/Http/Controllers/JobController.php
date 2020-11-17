@@ -91,7 +91,8 @@ class JobController extends Controller
      */
     public function show(Job $job)
     {
-        
+        $job = Job::find($job->id);
+        return view('frontend.jobdetail',compact('job'));
     }
 
     /**

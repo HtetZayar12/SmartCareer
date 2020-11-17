@@ -49,12 +49,5 @@
       </div>
     </div>
 
-
-<script type="text/javascript" src="{{asset('frontend_asset/js/jquery.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('frontend_asset/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-
-
-</body>
-</html> 
 @endsection
 

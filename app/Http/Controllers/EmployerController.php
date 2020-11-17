@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Employer;
 use App\User;
+use App\Subcategory;
 use Illuminate\Http\Request;
 
 class EmployerController extends Controller
@@ -15,8 +16,10 @@ class EmployerController extends Controller
      */
     public function index()
     {
-       $users = User::all(); 
-       return view('frontend.employerinfo',compact('users'));
+        $employers = Employer::all();
+        $users = User::all();
+        $subcategories = Subcategory::all();
+        return view('frontend.employerinfo',compact('employers','users','subcategories'));
     }
 
     /**
@@ -41,8 +44,9 @@ class EmployerController extends Controller
 
         $request->validate([
             'photo' => 'required|mimes:jpeg,png,jpg',
-            'description' => 'required|string|max:300',
-            'address' => 'required|string|max:50'
+            'description' => 'required|string|min:50',
+            'address' => 'required|string|max:50',
+            "subcategory" => "required",
         ]);
 
         if($request->file()) {
@@ -58,7 +62,9 @@ class EmployerController extends Controller
             $employer->photo = $path;
             $employer->description = $request->description;
             $employer->address = $request->address;
+            $employer->coin = $request->coin;
             $employer->user_id = $request->userid;
+            $employer->subcategory_id = $request->subcategory;
             $employer->save();
 
             // redirect
@@ -97,7 +103,11 @@ class EmployerController extends Controller
      */
     public function update(Request $request, Employer $employer)
     {
-        //
+        $employer = Employer::find($employer->id);
+        $employer->coin = $request->coin;
+        $employer->save();
+
+        return redirect()->route('mainpage');
     }
 
     /**
