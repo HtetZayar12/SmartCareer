@@ -50,33 +50,51 @@
     </div>
 
     <div class="modal fade" id="MODEL">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3>{{$jobs->user->name}}</h3>
-        <button class="close" data-dismiss="modal">
+<div class="col-md-9 mt-5" >
+      <h6 class="text-info mb-3">Jobs founded for you</h6>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="jobs">
+              <div class="card mb-5 shadow">
+                <div class="card-body px-5">
+                  <div class="row">
+                    <div class="col-sm-9">
+                      <h5 class="font-weight-bold">{{$jobs->name}}</h5>
+                    </div>
+                    <div class="col-sm-3">
+                      <h5 class="font-weight-bold float-right">{{$jobs->salary->amount}}MMK</h5>
+                    </div>
+                    <div class="col-sm-12">
+                      <label>Close Date : </label>
+                      <span>{{$jobs->closedate}}</span>
+                    </div>
+                  </div>
+                  <hr>
+                  <p>{{$jobs->description}}</p>
+                  <div class="row">
+                    <div class="col-sm-9 my-3">
+                      <span class="badge-pill py-2 px-3 mr-3" style="background-color: #d3d6d8">
+                              {{$jobs->skill_one}}
+                            </span>
+                            <span class="badge-pill py-2 px-3 mr-3" style="background-color: #d3d6d8">
+                              {{$jobs->skill_two}}
+                            </span>
+                            <span class="badge-pill py-2 px-3 mr-3" style="background-color: #d3d6d8">
+                              {{$jobs->skill_three}}
+                            </span>
+                    </div>
 
-        </button>
+                    <div class="col-sm-3 my-3">
+                      <a class="btn btn-info badge-pill px-5 float-right" href="{{route('jobdetail',$jobs->id)}}">Detail</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        </div>
       </div>
-      <div class="modal-body">
-        <p>{{$jobs->description}}</p>
-        <hr>
-        <p><b>Skill_one:</b>{{$jobs->skill_one}}</p>
-        <hr>
-        <p><b>Skill_two:</b>{{$jobs->skill_two}}</p>
-        <hr>
-        <p><b>Skill_three:</b>{{$jobs->skill_three}}</p>
-        <hr>
-        <p><b>Duration:</b>{{$jobs->duration}}</p>
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button class="btn btn-success">Save</button>
-      </div>
-
     </div>
-
-  </div>
 
 </div> 
 
