@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Category;
 Use App\Freelancer;
+Use App\Employer;
 Use App\User;
-use App\Subcategory;
-use App\Job;
-use App\Employer;
-use Auth;
+Use App\Subcategory;
+Use App\Job;
+Use App\Location;
+Use App\Salary;
+Use Auth;
 
 
 class FrontendController extends Controller
@@ -46,7 +48,10 @@ class FrontendController extends Controller
 
 	public function shop($value='')
 	{
-	return view('frontend.shop');
+	$employers = Auth::user()->id;
+	// dd($employers);	
+	return view('frontend.shop',compact('employers'));
+
 	}
 
 	public function about($value='')
@@ -76,5 +81,20 @@ class FrontendController extends Controller
 	{
 		$mysubcategory = Subcategory::find($id);
 		return view('frontend.itembysubcategory',compact('mysubcategory'));
+
+	public function jobdetail($id)
+	{
+	$job = Job::find($id);
+	return view('frontend.jobdetail',compact('job'));
+	}
+
+	public function projectform($value='')
+	{
+	$subcategories = Subcategory::all();
+    $categories = Category::all();
+    $locations = Location::all();
+    $users = User::all();
+    $salaries = Salary::all();
+    return view('frontend.projectform',compact('users','categories','subcategories','salaries','locations'));
 	}
 }

@@ -17,4 +17,13 @@ class Job extends Model
     {
         return $this->belongsTo('App\User');
     }
+	public function salary()
+	{
+	  return $this->belongsTo('App\Salary');
+	}
+
+	public function location()
+	{
+	  return $this->belongsTo('App\Location');
+	}
 }

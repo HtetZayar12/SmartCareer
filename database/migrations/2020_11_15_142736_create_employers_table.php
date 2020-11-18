@@ -20,7 +20,9 @@ class CreateEmployersTable extends Migration
             $table->text('address');
 
 
+
             
+            $table->text('coin')->nullable(true);
             $table->unsignedBigInteger('user_id');
 
             $table->foreign('user_id')

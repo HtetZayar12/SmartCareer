@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{{asset('frontend_asset/fonts/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('frontend_asset/fonts/ionicons.min.css')}}">
     <link rel="stylesheet" href="{{asset('frontend_asset/css/best-carousel-slide.css')}}">
-    <link rel="stylesheet" href={{asset('frontend_asset/css/gradient-navbar-1.css')}}"">
+    {{-- <link rel="stylesheet" href={{asset('frontend_asset/css/gradient-navbar-1.css')}}""> --}}
     <link rel="stylesheet" href="{{asset('frontend_asset/css/gradient-navbar.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="{{asset('frontend_asset/css/Pretty-Footer.css')}}">
@@ -36,18 +36,20 @@
             <div
                 class="collapse navbar-collapse text-center" id="navcol-1" style="font-family: Montserrat, sans-serif;text-align: center;">
                 <ul class="nav navbar-nav text-center mx-auto ml-auto">
-                    <li class="nav-item" style="padding-right: 20px;"><a class="nav-link active" 
+                    <li class="nav-item" style="padding-right: 20px;"><a class="nav-link {{ Request::is('find*') ? 'active' : '' }}" 
                         href="{{route('freelancerpage')}}">Find Freelancers</a></li>
-                    <li class="nav-item" style="padding-right: 20px;"><a class="nav-link" href="{{route('aboutpage')}}">How it works</a></li>
-                    <li class="nav-item" style="padding-right: 20px;"><a class="nav-link" 
-                        href="{{-- {{route('job.index')}} --}}">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link text-center" href="{{route('shoppage')}}">Shop</a></li>
+                    <li class="nav-item" style="padding-right: 20px;"><a class="nav-link {{ Request::is('about*') ? 'active' : '' }}" href="{{route('aboutpage')}}">How it works</a></li>
+                    <li class="nav-item" style="padding-right: 20px;"><a class="nav-link
+                        {{ Request::is('job*') ? 'active' : '' }}" 
+                        href="{{route('job.index')}}">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link text-center
+                        {{ Request::is('shop*') ? 'active' : '' }}" href="{{route('shoppage')}}">Shop</a></li>
                 </ul>
                 <ul class="nav navbar-nav ml-auto">
                     @auth
-                    <li class="nav-item"><a class="btn btn-primary ml-auto" role="button" href="{{route('job.create')}}">Post a Project</a></li>
+                    <li class="nav-item"><a class="btn btn-primary ml-auto" role="button" href="{{route('projectform')}}">Post a Project</a></li>
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" v-pre>
                             {{ Auth::user()->name }}
                         </a>
 
@@ -74,11 +76,11 @@
                         <a class="nav-link active" href="{{route('signinpage')}}">Signin</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link ml-3 px-3" href="{{route('signuppage')}}" style="border-radius: 20px;background: #048f83;color: rgb(249,248,247);">Signup</a>
+                        <a class="nav-link ml-3 px-3 btn badge-pill btn-light text-dark" href="{{route('signuppage')}}">Signup</a>
                     </li>
                     @endauth
                 </ul>
-        </div>
+            </div>
         </div>
     </nav>
     @yield('content')
@@ -124,6 +126,7 @@
     </footer>
     <script src="{{asset('frontend_asset/js/jquery.min.js')}}"></script>
     <script src="{{asset('frontend_asset/bootstrap/js/bootstrap.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('frontend_asset/js/custom.js')}}"></script>
     @yield('script')
 </body>
 

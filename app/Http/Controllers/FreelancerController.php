@@ -21,7 +21,7 @@ class FreelancerController extends Controller
         $freelancers = Freelancer::all();
         $users = User::all();
         $subcategories = Subcategory::all();
-       return view('frontend.freelanceinfo',compact('freelancers','users','subcategories'));
+        return view('frontend.freelanceinfo',compact('freelancers','users','subcategories'));
     }
 
     /**
@@ -44,7 +44,7 @@ class FreelancerController extends Controller
     {
         $request->validate([
             'photo' => 'required|mimes:jpeg,png,jpg',
-            'description' => 'required|string|max:300',
+            'description' => 'required|string|min:50',
             'address' => 'required|string|max:50',
             "subcategory" => "required",
         ]);
@@ -81,7 +81,8 @@ class FreelancerController extends Controller
      */
     public function show(Freelancer $freelancer)
     {
-        //
+        // $freelancers = Freelancer::find($freelancer->id);
+        // return view('frontend.freelancerdetail',compact('freelancers'));
     }
 
     /**

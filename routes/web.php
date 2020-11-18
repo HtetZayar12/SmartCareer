@@ -15,13 +15,18 @@ use Illuminate\Support\Facades\Route;
 
 
 //For Backend
-Route::resource('category','CategoryController');
-Route::resource('subcategory','SubcategoryController');
-Route::resource('salary','SalaryController');
-Route::resource('location','LocationController');
+
+Route::middleware('role:admin')->group(function () {
+	Route::resource('category','CategoryController');
+	Route::resource('subcategory','SubcategoryController');
+	Route::resource('salary','SalaryController');
+	Route::resource('location','LocationController');
+});
 
 //Frontend
-
+Route::middleware('role:admin')->group(function () {
+	Route::get('postproject', 'FrontendController@projectform')->name('projectform');
+});
 Route::resource('job','JobController');
 
 //Employer And Freelancer
@@ -45,7 +50,11 @@ Route::resource('user','UserController');
 
 Route::get('find', 'FrontendController@find_freelancer')->name('freelancerpage');
 Route::get('freelancerdetail/{id}','FrontendController@freelancerdetail')->name('freelancerdetail');
+
 Route::get('itembysubcategory/{id}','FrontendController@itembysubcategory')->name('itembysubcategory');
-// Route::get('postproject', 'FrontendController@projectform')->name('projectform');
+Route::get('postproject', 'FrontendController@projectform')->name('projectform');
+Route::get('jobdetail/{id}','FrontendController@jobdetail')->name('jobdetail');
+
+
 
 

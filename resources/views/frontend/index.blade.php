@@ -38,19 +38,17 @@
   </div>
   <div>
      <h1 class="text-center" style="font-family: Montserrat, sans-serif;font-size: 30px;margin: 35px;margin-bottom: 10px;"><strong>Get work done in different categories</strong></h1>
-     <p class="text-center" style="font-family: Montserrat, sans-serif;">Freelancers available by category</p>
+     <p class="text-center" style="font-family: Montserrat, sans-serif;font-size: 20px">Freelancers available by category</p>
   </div>
   <div class="container">
       <div class="row" style="font-family: Montserrat, sans-serif;">
         
          @foreach($categories as $category)
-          <div class="col-lg-4 col-md-6 mb-3 " style="width: 20px;">
+          <div class="col-lg-4 col-md-6 my-3 " style="width: 20px;">
              <div class="card bg-white text-dark">
-                 <img class="card-img h-75 w-100" src="{{asset($category->photo)}}" alt="Card image" >
-                 <div class="card-img-overlay " style="margin: 110px 30px;">
-                   @foreach($category->subcategories as $subcategory)
-                   <a href="#" class="btn btn-primary">{{$subcategory->name}}</a>
-                   @endforeach
+                 <img class="card-img" height="300px" src="{{asset($category->photo)}}" alt="Card image" >
+                 <div class="card-body text-center">
+                   <h4>{{$category->name}}</h4>
                  </div>
                </div>
           </div>
