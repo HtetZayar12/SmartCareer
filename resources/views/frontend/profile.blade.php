@@ -10,10 +10,24 @@
 								<img src="{{asset('frontend_asset/img/klee.jpg')}}" class="card-img rounded-circle">
 							</div>
 							<div class="col-9 mt-2">
-								<p>Htet Zayar</p>
-								<p>htetzayar&#64;gmail.com</p>
-								<p>0932421231</p>
-								<button class="btn btn-info">Edit Profile</button>
+								<p>{{ Auth::user()->name }}</p>
+								<p>{{ Auth::user()->email }}</p>
+
+								
+            					@role('freelancer')
+            					@foreach ($freelancers as $freelancer)
+            					<p>{{$freelancer->address}}</p>
+            					@endforeach
+        						@endrole
+
+        						@role('employer')
+            					@foreach ($employers as $employer)
+            					<p>{{$employer->address}}</p>
+            					@endforeach
+        						@endrole
+
+								
+								<a href="{{ route('editprofilepage') }}" class="btn btn-info">Edit Profile</a>
 							</div>
 						</div>
 					</div>

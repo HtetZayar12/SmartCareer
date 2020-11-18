@@ -32,6 +32,7 @@ Route::get('signin', 'FrontendController@signin')->name('signinpage');
 Route::get('signup', 'FrontendController@signup')->name('signuppage');
 Route::get('/', 'FrontendController@home')->name('mainpage');
 Route::get('profile', 'FrontendController@profile')->name('profilepage');
+Route::get('editprofile', 'FrontendController@editprofile')->name('editprofilepage');
 Route::get('shop', 'FrontendController@shop')->name('shoppage');
 Route::get('about', 'FrontendController@about')->name('aboutpage');
 
@@ -44,6 +45,7 @@ Route::resource('user','UserController');
 
 Route::get('find', 'FrontendController@find_freelancer')->name('freelancerpage');
 Route::get('freelancerdetail/{id}','FrontendController@freelancerdetail')->name('freelancerdetail');
+Route::get('itembysubcategory/{id}','FrontendController@itembysubcategory')->name('itembysubcategory');
 // Route::get('postproject', 'FrontendController@projectform')->name('projectform');
 
 

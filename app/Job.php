@@ -12,4 +12,9 @@ class Job extends Model
 	{
 	  return $this->belongsTo('App\Subcategory');
 	}
+
+	public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

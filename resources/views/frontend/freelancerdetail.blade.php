@@ -43,11 +43,42 @@
             </div>
 
         </div>
-             <a href="" class="btn btn-info my-3 w-25">Hire</a>
+                <button data-id="{{$jobs->user->id}}"class="btn btn-info my-3 w-25" data-target="#MODEL" data-toggle="modal">Hire</button>
       </div>
 
       </div>
     </div>
+
+    <div class="modal fade" id="MODEL">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>{{$jobs->user->name}}</h3>
+        <button class="close" data-dismiss="modal">
+
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>{{$jobs->description}}</p>
+        <hr>
+        <p><b>Skill_one:</b>{{$jobs->skill_one}}</p>
+        <hr>
+        <p><b>Skill_two:</b>{{$jobs->skill_two}}</p>
+        <hr>
+        <p><b>Skill_three:</b>{{$jobs->skill_three}}</p>
+        <hr>
+        <p><b>Duration:</b>{{$jobs->duration}}</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button class="btn btn-success">Save</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</div> 
 
 
 <script type="text/javascript" src="{{asset('frontend_asset/js/jquery.min.js')}}"></script>
@@ -57,4 +88,6 @@
 </body>
 </html> 
 @endsection
+
+
 

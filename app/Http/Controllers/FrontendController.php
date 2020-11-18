@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Category;
 Use App\Freelancer;
 Use App\User;
+use App\Subcategory;
+use App\Job;
+use App\Employer;
+use Auth;
 
 
 class FrontendController extends Controller
@@ -29,7 +33,15 @@ class FrontendController extends Controller
 
 	public function profile($value='')
 	{
-	return view('frontend.profile');
+	$users= User::all();
+	$freelancers=Freelancer::all();
+	$employers=Employer::all();
+	return view('frontend.profile',compact('users','freelancers','employers'));
+	}
+
+	public function editprofile($value='')
+	{
+	return view('frontend.editprofile');
 	}
 
 	public function shop($value='')
@@ -46,21 +58,23 @@ class FrontendController extends Controller
 	{
 	
 	$freelancers=Freelancer::all();
-	$categories=Category::all();
+
 	$users = User::all();
-	return view('frontend.find_freelancer',compact('freelancers','categories','users'));
+	return view('frontend.find_freelancer',compact('freelancers','users'));
 
 	}
 
 	public function freelancerdetail($id)
 	{
 
+	$jobs = Job::find($id);
 	$freelancers = Freelancer::find($id);
-	return view('frontend.freelancerdetail',compact('freelancers'));
+	return view('frontend.freelancerdetail',compact('jobs','freelancers'));
 	}
 
-	// public function projectform($value='')
-	// {
-	// return view('frontend.projectform');
-	// }
+	public function itembysubcategory($id)
+	{
+		$mysubcategory = Subcategory::find($id);
+		return view('frontend.itembysubcategory',compact('mysubcategory'));
+	}
 }
