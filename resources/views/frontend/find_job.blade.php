@@ -11,43 +11,6 @@
 			
 
 
-		<div class="col-md-9" >
-			<h4 class="mb-5 text-info"> jobs founded near you</h4>			
-
-			<div class="row">
-				
-				<div class="jobs">
-						<div class="col-md-12 col-lg-12 col-sm-12 mb-5 w-100" >
-						<div class="shadow bg-white rounded">
-							
-					  		<div class="card-body">
-						  		<img src="#" class="w-10 rounded-circle">
-						  		<span><a href="#" class="text-decoration-none ">name</a></span>
-						  		<hr class="bg-faded">
-						  		<h5><a href="#" class="text-decoration-none py-5">iOS Developer </a></h5>
-					    		
-
-					    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					    		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					    		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				                </p>
-
-				                <hr class="bg-faded">
-
-					    			<span class="badge badge-pill badge-primary">&nbsp;Swift&nbsp;</span>
-
-					    			<span class="badge badge-pill badge-primary">&nbsp;Angular JS&nbsp;</span>							    			
-					  		</div>
-						</div>
-					</div>
-	 				@php $i++; @endphp
-	  				@endforeach
-				</div>
-			</div>
-		</div>
-		
-
-
 		<div class="col-md-9 mt-5" >
 			<h6 class="text-info mb-3">Jobs founded for you</h6>
 			<div class="row">

@@ -49,9 +49,7 @@ class FrontendController extends Controller
 	public function shop($value='')
 	{
 	$employers = Auth::user()->id;
-	// dd($employers);	
 	return view('frontend.shop',compact('employers'));
-
 	}
 
 	public function about($value='')
@@ -81,6 +79,8 @@ class FrontendController extends Controller
 	{
 		$mysubcategory = Subcategory::find($id);
 		return view('frontend.itembysubcategory',compact('mysubcategory'));
+
+	}
 
 	public function jobdetail($id)
 	{

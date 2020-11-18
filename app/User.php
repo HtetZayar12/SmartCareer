@@ -42,14 +42,13 @@ class User extends Authenticatable
     public function freelancers()
     {
       return $this->hasMany('App\Freelancer');
-  }
+    }
 
      public function jobs()
-  {
-      return $this->hasMany('App\Job');
-  }
-
+    {
+     return $this->hasMany('App\Job');
     }
+
 
     public function employers()
     {
