@@ -1,6 +1,5 @@
 @extends('frontendtemplate')
 @section('content')
-@foreach($jobs as $job)
 <div class="container my-5">
 	<h3 class="text-info mb-5">My Project(s)</h3>
 	<div class="row">
@@ -47,7 +46,6 @@
 		</div>
 	</div>
 </div>
-@endforeach
 
 @endsection
 

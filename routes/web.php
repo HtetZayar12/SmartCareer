@@ -54,6 +54,7 @@ Route::get('find', 'FrontendController@find_freelancer')->name('freelancerpage')
 Route::get('freelancerdetail/{id}','FrontendController@freelancerdetail')->name('freelancerdetail');
 
 Route::get('itembysubcategory/{id}','FrontendController@itembysubcategory')->name('itembysubcategory');
+Route::get('jobbysubcategory/{id}','FrontendController@jobbysubcategory')->name('jobbysubcategory');
 Route::get('jobdetail/{id}','FrontendController@jobdetail')->name('jobdetail');
 
 // Route::get('subtract/{id}', 'EmployerController@subtract')->name('employer.subtract');

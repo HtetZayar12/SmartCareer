@@ -2,13 +2,13 @@
 @section('content')
 <div class="container-fluid mb-5" >
 
-		<div class="row">
-			<div class="col-md-3 mt-5 d-none d-sm-block">
-				<div class="container-fluid">
-				   <x-job-sidebar-component></x-job-sidebar-component>
+	<div class="row">
+		<div class="col-md-3 mt-5 d-none d-sm-block">
+			<div class="container-fluid">
+			   <x-job-sidebar-component></x-job-sidebar-component>
 			</div>
-			</div>
-			
+		</div>
+		
 
 
 		<div class="col-md-9 mt-5" >
@@ -16,7 +16,7 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="jobs">
-						@foreach($jobs as $job)
+						@foreach($myjob->jobs as $job)
 							<div class="card mb-5 shadow">
 								<div class="card-body px-5">
 									<div class="row">
@@ -76,6 +76,7 @@
 		</div>
 	</div>
 </div>
-
+			
 @endsection
 
+						

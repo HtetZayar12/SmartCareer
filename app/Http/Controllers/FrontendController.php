@@ -100,6 +100,13 @@ class FrontendController extends Controller
 
 	}
 
+	public function jobbysubcategory($id)
+	{
+		$myjob = Subcategory::find($id);
+		return view('frontend.jobbysubcategory',compact('myjob'));
+
+	}
+
 	public function jobdetail($id)
 	{
 	$job = Job::find($id);
