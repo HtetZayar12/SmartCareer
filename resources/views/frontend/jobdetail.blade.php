@@ -51,26 +51,38 @@
     </div>
     @role('freelancer')
     <div class="col-md-4 offset-1 bg-light rounded shadow">
-      <form>
+     <form method="get" action="{{-- {{route('project')}} --}}">
+        @csrf
+        <input type="hidden" name="jobid" value="{{$job->id}}">
+        <input type="hidden" name="userid" value="{{Auth::user()->id}}">
         <div class="form-group mt-3">
           <h5 class="form-control-label">Your Bid Amount</h5>
-          <input type="text" name="mybid" class="form-control my-3" placeholder="MMK">
+          <input type="number" name="bid" class="form-control my-3 @error('bid') is-invalid @enderror" placeholder="MMK">
+          @error('bid')
+              <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+              </span>
+          @enderror
         </div>
         <div class="form-group">
           <h6 class="form-control-label">Duration</h6>
-          <input type="number" name="myduration" class="form-control my-3" placeholder="hour">
+          <input type="number" name="duration" class="form-control my-3  @error('duration') is-invalid @enderror" placeholder="hour">
+          @error('duration')
+              <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+              </span>
+          @enderror
         </div>
         <div class="form-group">
           <h6 class="form-control-label">Cover Letter <span class="text-danger">(cover letter must have more than 100 words.)*</span></h6>
-          <textarea class="form-control" rows="6" name="coverletter"></textarea>
+          <textarea class="form-control @error('coverletter') is-invalid @enderror" rows="6" name="coverletter"></textarea>
+          @error('coverletter')
+              <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+              </span>
+          @enderror
         </div>
-        <button class="btn btn-block badge-pill badge-info p-2 mb-3 apply" name="btnapply" 
-        data-id="{{$job->id}}" data-duration="{{$job->duration}}" data-name="{{$job->name}}"
-        data-closedate="{{$job->closedate}}" data-budget="{{$job->salary->amount}}"
-        data-description="{{$job->description}}" data-skill_one="{{$job->skill_one}}"
-        data-skill_two="{{$job->skill_two}}" data-skill_three="{{$job->skill_three}}"
-        data-location="{{$job->location->name}}" data-price="mybid"
-        data-mydur="myduration" data-cv="coverletter">
+        <button class="btn btn-block badge-pill badge-info p-2 mb-3">
           Send Proposal
         </button>
       </form>

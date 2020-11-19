@@ -40,24 +40,54 @@
 					<button class="btn btn-outline-light float-right mb-3 ">View Detail</button>
 				</div>
 			</div>
+			@role('freelancer')
+			
 			<div class="col-md-12 my-5">
-		        <div class="card p-3">
-		            <h2 class="d-inline-block">Active Project</h2>	
-		            <table class="table mt-3 table-bordered dataTable">
-			            <thead>
-			              <tr>
-			                <th>Project Name</th>
-			                <th>AVG BID</th>
-			                <th>My BID</th>
-			                <th>Close Date</th>
-			                <th>Status</th>
-			              </tr>
-			            </thead>
-			            <tbody>
-			            </tbody>
-		          </table>
-		        </div>
-      		</div>
+				<div class="card p-3">
+		    		<h2 class="d-inline-block">Active Project</h2>	
+				        <table class="table mt-3 table-bordered dataTable">
+				            <thead>
+				              <tr>
+				                <th>Project Name</th>
+				                <th>Employee Name</th>
+				                <th>Budget</th>
+				                <th>Employee Bid</th>
+				                <th>Close Date</th>
+				                <th>Location</th>
+				                <th>Status</th>
+				              </tr>
+				            </thead>
+				            <tbody>
+				            </tbody>
+				      </table>
+				</div>
+			</div>
+			
+			@endrole
+			@role('employer')
+			
+			<div class="col-md-12 my-5">
+				<div class="card p-3">
+		    		<h2 class="d-inline-block">Active Project</h2>	
+				        <table class="table mt-3 table-bordered dataTable">
+				            <thead>
+				              <tr>
+				                <th>Project Name</th>
+				                <th>Employee Name</th>
+				                <th>Budget</th>
+				                <th>Employee Bid</th>
+				                <th>Close Date</th>
+				                <th>Location</th>
+				                <th>Action</th>
+				              </tr>
+				            </thead>
+				            <tbody>
+				            </tbody>
+				      </table>
+				</div>
+			</div>
+			
+			@endrole
 		</div>
 	</div>
 @endsection
@@ -69,3 +99,4 @@
     $('.dataTable').DataTable();
   </script>
 @endsection
+

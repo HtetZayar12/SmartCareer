@@ -19,9 +19,7 @@ class UserController extends Controller
      */
     public function index()
     {
-         $users = User::get();
-        return view('users._list',
-        ['users'=> $users]
+    
     }
 
     /**

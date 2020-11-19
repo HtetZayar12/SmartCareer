@@ -35,10 +35,25 @@ class FrontendController extends Controller
 
 	public function profile($value='')
 	{
-	$users= User::all();
+	// $jobs = Job::where('user_id',$user)->get();
 	$freelancers=Freelancer::all();
 	$employers=Employer::all();
-	return view('frontend.profile',compact('users','freelancers','employers'));
+	$user = Auth::user()->id;
+	$jobs = Job::where('user_id',$user)->get();
+	// return view('frontend.myproject',compact('jobs'));
+	// dd($applieds);
+	return view('frontend.profile',compact('jobs','user','freelancers','employers'));
+	}
+
+	public function project()
+	{
+	// dd($request);
+	$user = Auth::user()->id;
+	$jobs = Job::where('user_id',$user)->get();
+	// $jobs = Job::find($request->jobid);
+	// $jobs->users()->attach($request->userid,['bid'=>$request->bid,'myduration'=>$request->duration,'cover_letter'=>$request->coverletter]);
+	// dd($jobs);
+	return view('frontend.myproject',compact('jobs'));
 	}
 
 	public function editprofile($value='')
@@ -48,7 +63,9 @@ class FrontendController extends Controller
 
 	public function shop($value='')
 	{
-	$employers = Auth::user()->id;
+	$users = Auth::user()->id;
+	$employers = Employer::where('user_id',$users)->get();
+	// dd($employers);
 	return view('frontend.shop',compact('employers'));
 	}
 
@@ -69,8 +86,9 @@ class FrontendController extends Controller
 
 	public function freelancerdetail($id)
 	{
-
-	$jobs = Job::find($id);
+	$user = Auth::user()->id;
+	$jobs = Job::where('user_id',$user)->get();
+	// dd($jobs);
 	$freelancers = Freelancer::find($id);
 	return view('frontend.freelancerdetail',compact('jobs','freelancers'));
 	}
@@ -88,13 +106,26 @@ class FrontendController extends Controller
 	return view('frontend.jobdetail',compact('job'));
 	}
 
+	// public function apply($id,Request $request)
+	// {
+	// $jobs = Job::find($id);
+	// $jobs->users()->attach($request->userid,['bid'=>$request->bid,'myduration'=>$request->duration,'cover_letter'=>$request->coverletter]);
+	// $user = Auth::user()->id;
+	// $freelancers=Freelancer::all();
+	// $employers=Employer::all();
+	// return view('frontend.profile',compact('user','freelancers','employers','jobs'));
+	
+	// }
+
 	public function projectform($value='')
 	{
 	$subcategories = Subcategory::all();
     $categories = Category::all();
     $locations = Location::all();
-    $users = User::all();
     $salaries = Salary::all();
-    return view('frontend.projectform',compact('users','categories','subcategories','salaries','locations'));
+    $user = Auth::user()->id;
+    $employers = Employer::where('user_id',$user)->get();
+    // dd($employers);
+    return view('frontend.projectform',compact('user','categories','subcategories','salaries','locations','employers'));
 	}
 }

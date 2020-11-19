@@ -2,10 +2,13 @@
 @section('content')
 
 <form method="post" action="{{route('job.store')}}" class="col-lg-6 offset-lg-3">
-	@csrf
-	@foreach($users as $row)
-    	<input type="hidden" name="user" value="{{$row->id}}">
-    @endforeach
+	@csrf 
+	@foreach($employers as $employer)
+    <input type="hidden" name="user" value="{{$user}}">
+    <input type="hidden" name="employer" value="{{$employer->id}}">
+    
+    
+    @if($employer->coin != 0)
 	<div class="row my-2">
 		<div class="col-md-12 col-lg-12 col-sm-12 my-2">
 
@@ -87,9 +90,6 @@
 			
 			<select class="form-control select2 form-control-lg" name="dur_type" data-autofocus="true"  style="font-size: 16px;">
 				<option>Hour</option>
-	            <option>Day</option>
-	            <option>Month</option>
-	            <option>Year</option>
 	        </select>  											
 		</div>
 	</div>
@@ -128,7 +128,18 @@
 	</div>
 
 
-	<input type="submit" name="" value="Yes, Post My Project" class="btn btn-info my-4">
+	<input type="submit" value="Yes,Post My Project" class="btn btn-info my-4">
+	@else
+	<div class="card my-5 shadow border-danger">
+		<div class="card-body">
+			<h5 class="text-center text-danger mt-5">You have to buy coin first from our shop.</h5>
+			<a href="{{route('shoppage')}}" class="btn badge-pill badge-info mt-5 float-right">Go to Shop</a>
+		</div>
+	</div>
+	@endif
+	@endforeach
 </form>
+
+
 
 @endsection

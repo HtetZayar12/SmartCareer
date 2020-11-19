@@ -24,8 +24,11 @@ Route::middleware('role:admin')->group(function () {
 });
 
 //Frontend
-Route::middleware('role:admin')->group(function () {
+Route::middleware('role:employer')->group(function () {
 	Route::get('postproject', 'FrontendController@projectform')->name('projectform');
+	Route::get('shop', 'FrontendController@shop')->name('shoppage');
+	Route::get('myproject', 'FrontendController@project')->name('project');
+
 });
 Route::resource('job','JobController');
 
@@ -38,22 +41,23 @@ Route::get('signup', 'FrontendController@signup')->name('signuppage');
 Route::get('/', 'FrontendController@home')->name('mainpage');
 Route::get('profile', 'FrontendController@profile')->name('profilepage');
 Route::get('editprofile', 'FrontendController@editprofile')->name('editprofilepage');
-Route::get('shop', 'FrontendController@shop')->name('shoppage');
+
 Route::get('about', 'FrontendController@about')->name('aboutpage');
+Route::get('projectform', 'FrontendController@projectform')->name('projectform');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('user','UserController');
 
-
-
 Route::get('find', 'FrontendController@find_freelancer')->name('freelancerpage');
 Route::get('freelancerdetail/{id}','FrontendController@freelancerdetail')->name('freelancerdetail');
 
 Route::get('itembysubcategory/{id}','FrontendController@itembysubcategory')->name('itembysubcategory');
-Route::get('postproject', 'FrontendController@projectform')->name('projectform');
 Route::get('jobdetail/{id}','FrontendController@jobdetail')->name('jobdetail');
+
+// Route::get('subtract/{id}', 'EmployerController@subtract')->name('employer.subtract');
+// Route::get('apply/{id}', 'FrontendController@apply')->name('jobapply');
 
 
 

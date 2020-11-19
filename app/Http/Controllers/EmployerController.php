@@ -119,4 +119,13 @@ class EmployerController extends Controller
     {
         //
     }
+
+    // public function subtract($id)
+    // {
+    //   $employer  = Employer::find($id);
+    //   $employer->coin = $employer->coin-50;
+    //   $employer->save(); 
+
+    //   return redirect()->route('job.store');
+    // }
 }
