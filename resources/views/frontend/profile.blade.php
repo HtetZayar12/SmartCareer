@@ -7,24 +7,36 @@
 					<div class="card-body">
 						<div class="row">
 							<div class="col-3">
-								<img src="{{asset('frontend_asset/img/klee.jpg')}}" class="card-img rounded-circle">
+								@role('freelancer')
+								@foreach($freelancers as $freelancer)
+								<img src="{{$freelancer->photo}}" class="card-img rounded-circle">
+								@endforeach
+
+
+								@else
+								@foreach($employers as $employer)
+								<img src="{{$employer->photo}}" class="card-img rounded-circle">
+								@endforeach
+								@endrole
+
 							</div>
 							<div class="col-9 mt-2">
-								<p>{{ Auth::user()->name }}</p>
-								<p>{{ Auth::user()->email }}</p>
+								@role('freelancer')
+								@foreach($freelancers as $freelancer)
+								<p>{{ $freelancer->user->name}}</p>
+								<p>{{ $freelancer->user->email}}</p>
+								<p>{{$freelancer->address}}</p>
+								@endforeach
 
-								
-            					@role('freelancer')
-            					@foreach ($freelancers as $freelancer)
-            					<p>{{$freelancer->address}}</p>
-            					@endforeach
+
+								@else
+								@foreach($employers as $employer)
+								<p>{{ $employer->user->name }}</p>
+								<p>{{ $employer->user->email }}</p>
+								<p>{{$employer->address}}</p>
+								@endforeach
         						@endrole
 
-        						@role('employer')
-            					@foreach ($employers as $employer)
-            					<p>{{$employer->address}}</p>
-            					@endforeach
-        						@endrole
 
 								
 								<a href="{{ route('editprofilepage') }}" class="btn btn-info">Edit Profile</a>

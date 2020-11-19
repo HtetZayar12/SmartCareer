@@ -127,7 +127,13 @@
     <script src="{{asset('frontend_asset/js/jquery.min.js')}}"></script>
     <script src="{{asset('frontend_asset/bootstrap/js/bootstrap.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('frontend_asset/js/custom.js')}}"></script>
+     <script type="text/javascript" src="{{asset('frontend_asset/js/jquery.min.js')}}"></script>
+  <script type="text/javascript" src="{{asset('frontend_asset/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <link rel="stylesheet" type="text/css" href="{{asset('frontend_asset/bootstrap/css/bootstrap.min.css')}}">
+
+    
     @yield('script')
 </body>
 
 </html>
+

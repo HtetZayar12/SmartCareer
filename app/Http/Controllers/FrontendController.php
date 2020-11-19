@@ -30,14 +30,18 @@ class FrontendController extends Controller
 	public function home($value='')
 	{
 	$categories=Category::all();
-	return view('frontend.index' ,compact('categories'));
+	$subcategories = Subcategory::all();
+	return view('frontend.index' ,compact('categories','subcategories'));
 	}
 
 	public function profile($value='')
 	{
-	$users= User::all();
-	$freelancers=Freelancer::all();
-	$employers=Employer::all();
+	$users= Auth::user()->id;
+	
+	$freelancers=Freelancer::where('user_id',$users)->get();
+
+	
+	$employers=Employer::where('user_id',$users)->get();
 	return view('frontend.profile',compact('users','freelancers','employers'));
 	}
 
