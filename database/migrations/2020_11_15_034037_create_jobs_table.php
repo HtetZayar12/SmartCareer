@@ -22,6 +22,7 @@ class CreateJobsTable extends Migration
             $table->text('duration');
             $table->date('closedate');
             $table->text('description');
+            $table->integer('status')->default(0);
             $table->unsignedBigInteger('location_id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('subcategory_id');

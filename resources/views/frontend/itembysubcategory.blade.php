@@ -17,26 +17,25 @@
 				<div class="col-sm-12">
 					<div class="jobs">
 						@foreach($mysubcategory->freelancers as $freelancer)
-					<a href="{{route('freelancerdetail',$freelancer->id)}}">
-								<div class="card shadow mb-5">
-									<div class="card-body px-5">
-										<div class="row">
-											<div class="col-sm-2">
-												<img src="{{asset($freelancer->photo)}}" width="60px" height="60px" class="rounded-circle">
-											</div>
-											<div class="col-sm-10">
-												<h5 class="font-weight-bold">{{$freelancer->user->name}}</h5>
-							  					<p>{{$freelancer->subcategory->name}}</p>
-											</div>
+							<div class="card shadow mb-5">
+								<div class="card-body px-5">
+									<div class="row">
+										<div class="col-sm-2">
+											<img src="{{asset($freelancer->photo)}}" width="60px" height="60px" class="rounded-circle">
 										</div>
-										<hr>
-										<p>{{$freelancer->description}}</p>
-										<div>
-											<a class="btn btn-info badge-pill px-5 float-right" 
-											href="{{route('freelancerdetail',$freelancer->id)}}">Detail</a>
+										<div class="col-sm-10">
+											<h5 class="font-weight-bold">{{$freelancer->user->name}}</h5>
+						  					<p>{{$freelancer->subcategory->name}}</p>
 										</div>
 									</div>
+									<hr>
+									<p>{{$freelancer->description}}</p>
+									<div>
+										<a class="btn btn-info badge-pill px-5 float-right" 
+										href="{{route('freelancerdetail',$freelancer->id)}}">Detail</a>
+									</div>
 								</div>
+							</div>
 						@endforeach
 					</div>
 				</div>

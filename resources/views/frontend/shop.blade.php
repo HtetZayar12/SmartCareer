@@ -7,7 +7,8 @@
  <div class="container" style="font-family: Montserrat, sans-serif;">
       <div class="row">
           <div class="col-lg-4 col-sm-12">
-            <form method="post" action="{{route('employer.update',$employers)}}" onsubmit="return confirm('Are you Sure to Buy 100 coins?')">
+            @foreach($employers as $employer)
+            <form method="post" action="{{route('employer.update',$employer->id)}}" onsubmit="return confirm('Are you Sure to Buy 100 coins?')">
               @csrf
               @method('PUT')
                  <div class="card text-center">
@@ -25,7 +26,7 @@
             </form>
           </div>
           <div class="col-lg-4 col-sm-12">
-            <form method="post" action="{{route('employer.update',$employers)}}" onsubmit="return confirm('Are you Sure to Buy 250 coins?')">
+            <form method="post" action="{{route('employer.update',$employer->id)}}" onsubmit="return confirm('Are you Sure to Buy 250 coins?')">
               @csrf
               @method('PUT')          
                  <div class="card text-center">
@@ -43,7 +44,7 @@
             </form>
           </div>
           <div class="col-lg-4 col-sm-12">
-            <form method="post" action="{{route('employer.update',$employers)}}" onsubmit="return confirm('Are you Sure to Buy 500 coins?')">
+            <form method="post" action="{{route('employer.update',$employer->id)}}" onsubmit="return confirm('Are you Sure to Buy 500 coins?')">
               @csrf
               @method('PUT')
               
@@ -60,6 +61,7 @@
                      </div>
                    </div>
             </form>
+            @endforeach
           </div>
       </div>
  </div>

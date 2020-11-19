@@ -8,6 +8,7 @@ use App\Subcategory;
 use App\Location;
 use App\User;
 use App\Salary;
+use App\Employer;
 use Illuminate\Http\Request;
 
 class JobController extends Controller
@@ -23,6 +24,9 @@ class JobController extends Controller
         $categories = Category::all();
         $subcategories = Subcategory::all();
         $salaries = Salary::all();
+        // $users = Auth::user()->id;
+        // $employers = Employer::where('user_id',$users)->get();
+        
         return view('frontend.find_job',compact('jobs','categories','subcategories','salaries'));
     }
 
@@ -77,7 +81,12 @@ class JobController extends Controller
         $job->subcategory_id = $request->subcategory;
         $job->location_id = $request->location;
         $job->user_id = $request->user;
+
         $job->save();
+
+        $employer  = Employer::find($request->employer);
+        $employer->coin = $employer->coin-50;
+        $employer->save();
 
         return redirect()->route('job.index');
 
@@ -128,4 +137,5 @@ class JobController extends Controller
     {
         //
     }
+
 }

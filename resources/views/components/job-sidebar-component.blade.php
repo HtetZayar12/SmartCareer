@@ -1,6 +1,7 @@
-<!-- <div>
-    Simplicity is an acquired taste. - Katharine Gerould
-</div> -->
+{{-- <div>
+    The whole future lies in uncertainty: live immediately. - Seneca
+</div> --}}
+
 
 <div class="accordion mt-4" id="accordionExample">
   			@php $i=1; @endphp
@@ -16,7 +17,7 @@
     	 <div id="collapseOne{{$i}}" class="collapse @if($loop->first) {{'show'}} @endif" aria-labelledby="headingOne" data-parent="#accordionExample">
       		<div class="card-body">
         	@foreach($category->subcategories as $subcategory)
-        	<a class="btn btn-link text-decoration-none" href="{{route('itembysubcategory',$subcategory->id)}}">{{$subcategory->name}}</a>
+        	<a class="btn btn-link text-decoration-none" href="{{route('jobbysubcategory',$subcategory->id)}}">{{$subcategory->name}}</a>
         			
         	@endforeach
      		</div>

@@ -39,19 +39,23 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function freelancers()
+    public function freelancer()
     {
-      return $this->hasMany('App\Freelancer');
+      return $this->belongsTo('App\Freelancer');
     }
 
-     public function jobs()
+    public function jobs()
     {
-     return $this->hasMany('App\Job');
-    }
+        return $this->belongsToMany('App\Job')
+                    ->withPivot('bid')
+                    ->withPivot('myduration')
+                    ->withPivot('cover_letter')
+                    ->withTimestamps();
+    }   
 
 
-    public function employers()
+    public function employer()
     {
-      return $this->hasMany('App\Employer');
+      return $this->belongsTo('App\Employer');
     }
 }
