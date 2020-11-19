@@ -32,6 +32,9 @@ Route::middleware('role:employer')->group(function () {
 });
 Route::resource('job','JobController');
 
+Route::resource('job','JobController');
+
+
 //Employer And Freelancer
 Route::resource('employer','EmployerController');
 Route::resource('freelancer','FreelancerController');
@@ -62,7 +65,6 @@ Route::get('detail/{id}', 'JobController@detail')->name('job.detail');
 Route::post('confirm/{id}', 'JobController@confirm')->name('job.confirm');
 Route::post('delete/{id}', 'JobController@delete')->name('job.delete');
 Route::post('applied_detail', 'FrontendController@applied_detail')->name('applied_detail');
-
 
 
 

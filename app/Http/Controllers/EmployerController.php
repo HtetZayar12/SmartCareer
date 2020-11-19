@@ -106,7 +106,7 @@ class EmployerController extends Controller
         $employer->coin += $request->coin;
         $employer->save();
 
-        return redirect()->route('mainpage');
+        return redirect()->route('projectform');
     }
 
     /**

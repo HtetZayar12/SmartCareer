@@ -10,31 +10,24 @@
 								@role('freelancer')
 								<img src="{{Auth::user()->freelancer->photo}}" class="card-img rounded-circle">
 								@endrole
+
 								@role('employer')
 								<img src="{{Auth::user()->employer->photo}}" class="card-img rounded-circle">
 								@endrole
 							</div>
 							<div class="col-9 mt-2">
-								<p>{{ Auth::user()->name }}</p>
-								<p>{{ Auth::user()->email }}</p>
-
+								@role('freelancer')
+								<p>{{Auth::user()->name}}</p>
+								<p>{{Auth::user()->email}}</p>
+								<p>{{Auth::user()->freelancer->address}}</p>
+								@endrole
 								
-            					@role('freelancer')
-            					{{-- @foreach ($freelancers as $freelancer)
-            					<p>{{$freelancer->address}}</p>
-            					@endforeach --}}
-            					<p>{{Auth::user()->freelancer->address}}</p>
-        						@endrole
 
         						@role('employer')
-            					{{-- @foreach ($employers as $employer)
-            					<p>{{$employer->address}}</p>
-            					@endforeach --}}
-            					<p>{{Auth::user()->employer->address}}</p>
-
-        						@endrole
-
-								
+            					<p>{{Auth::user()->name}}</p>
+								<p>{{Auth::user()->email}}</p>
+								<p>{{Auth::user()->employer->address}}</p>
+								@endrole						
 								<a href="{{ route('editprofilepage') }}" class="btn btn-info">Edit Profile</a>
 							</div>
 						</div>

@@ -30,7 +30,8 @@ class FrontendController extends Controller
 	public function home($value='')
 	{
 	$categories=Category::all();
-	return view('frontend.index' ,compact('categories'));
+	$subcategories = Subcategory::all();
+	return view('frontend.index' ,compact('categories','subcategories'));
 	}
 
 	public function profile($value='')
@@ -38,7 +39,7 @@ class FrontendController extends Controller
 	// $jobs = Job::where('user_id',$user)->get();
 	// $freelancers=Freelancer::all();
 	// $employers=Employer::all();
-	 $user = Auth::id();
+	$user = Auth::id();
 	$jobs = Job::where('user_id',$user)->get();
 	$jobss=[];
 	foreach ($jobs as $job) {
@@ -75,6 +76,7 @@ class FrontendController extends Controller
 	// $jobs->users()->attach($request->userid,['bid'=>$request->bid,'myduration'=>$request->duration,'cover_letter'=>$request->coverletter]);
 	// dd($jobs);
 	return view('frontend.myproject',compact('jobs'));
+
 	}
 
 	public function editprofile($value='')

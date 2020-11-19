@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
     <link rel="stylesheet" href="{{asset('frontend_asset/fonts/font-awesome.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('frontend_asset/bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('frontend_asset/fonts/ionicons.min.css')}}">
     <link rel="stylesheet" href="{{asset('frontend_asset/css/best-carousel-slide.css')}}">
     {{-- <link rel="stylesheet" href={{asset('frontend_asset/css/gradient-navbar-1.css')}}""> --}}
@@ -131,7 +132,11 @@
     <script src="{{asset('frontend_asset/js/jquery.min.js')}}"></script>
     <script src="{{asset('frontend_asset/bootstrap/js/bootstrap.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('frontend_asset/js/custom.js')}}"></script>
+    <script type="text/javascript" src="{{asset('frontend_asset/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+    
     @yield('script')
 </body>
 
 </html>
+
