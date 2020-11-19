@@ -20,6 +20,7 @@ class CreateJobUserTable extends Migration
             $table->integer('bid');
             $table->integer('myduration');
             $table->text('cover_letter');
+            $table->integer('confirm_status')->default(0);
 
             $table->foreign('user_id')
                     ->references('id')

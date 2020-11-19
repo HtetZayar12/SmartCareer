@@ -51,7 +51,7 @@
     </div>
     @role('freelancer')
     <div class="col-md-4 offset-1 bg-light rounded shadow">
-     <form method="get" action="{{-- {{route('project')}} --}}">
+     <form method="POST" action="{{route('applied_detail')}}">
         @csrf
         <input type="hidden" name="jobid" value="{{$job->id}}">
         <input type="hidden" name="userid" value="{{Auth::user()->id}}">

@@ -133,9 +133,40 @@ class JobController extends Controller
      * @param  \App\Job  $job
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Job $job)
+    public function destroy(Job $job,$id)
     {
         //
     }
 
+    public function detail($id)
+    {
+        $job = Job::find($id);
+        // dd($jobs);
+        return view('frontend.confirmation',compact('job'));
+    }
+
+    public function confirm($id,Request $request)
+    {
+        // dd($request);
+        // dd($id);
+        $job = Job::find($id);
+        
+        $job->status = 1;
+        $job->save();
+
+        // $job->users()->attach($request->userid,['confirm_status'=>1]);
+        // 
+        foreach ($job->users as $row) {
+            if ($row->id == $request->userid) {
+                $row->pivot->confirm_status = 1;
+                $row->pivot->save();
+            }
+            // $row->job
+            else{
+                $row->pivot->confirm_status = 2;
+                $row->pivot->save();
+            }
+        }
+        return back();
+    }
 }

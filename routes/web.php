@@ -58,7 +58,10 @@ Route::get('jobbysubcategory/{id}','FrontendController@jobbysubcategory')->name(
 Route::get('jobdetail/{id}','FrontendController@jobdetail')->name('jobdetail');
 
 // Route::get('subtract/{id}', 'EmployerController@subtract')->name('employer.subtract');
-// Route::get('apply/{id}', 'FrontendController@apply')->name('jobapply');
+Route::get('detail/{id}', 'JobController@detail')->name('job.detail');
+Route::post('confirm/{id}', 'JobController@confirm')->name('job.confirm');
+Route::post('delete/{id}', 'JobController@delete')->name('job.delete');
+Route::post('applied_detail', 'FrontendController@applied_detail')->name('applied_detail');
 
 
 

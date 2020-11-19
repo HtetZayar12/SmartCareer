@@ -19,8 +19,13 @@ class Job extends Model
                     ->withPivot('bid')
                     ->withPivot('myduration')
                     ->withPivot('cover_letter')
+                    ->withPivot('confirm_status')
                     ->withTimestamps();
-    }  
+    }
+
+	public function employer(){
+	  return $this->belongsTo('App\User','user_id');
+	} 
 
 	public function salary()
 	{

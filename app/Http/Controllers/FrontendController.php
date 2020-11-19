@@ -36,13 +36,34 @@ class FrontendController extends Controller
 	public function profile($value='')
 	{
 	// $jobs = Job::where('user_id',$user)->get();
-	$freelancers=Freelancer::all();
-	$employers=Employer::all();
-	$user = Auth::user()->id;
+	// $freelancers=Freelancer::all();
+	// $employers=Employer::all();
+	 $user = Auth::id();
 	$jobs = Job::where('user_id',$user)->get();
-	// return view('frontend.myproject',compact('jobs'));
-	// dd($applieds);
-	return view('frontend.profile',compact('jobs','user','freelancers','employers'));
+	$jobss=[];
+	foreach ($jobs as $job) {
+		$jobid = $job->id;
+		$jobss[] = Job::whereHas('users',function($q) use ($jobid){
+		$q->where('job_id','=',$jobid);
+	})->get();
+	
+	}
+	
+
+	// // return view('frontend.myproject',compact('jobs'));
+	// // dd($applieds);
+
+	return view('frontend.profile',compact('jobss'));
+	}
+
+	public function applied_detail(Request $request){
+		// dd($request);
+		$jobs = Job::find($request->jobid);
+		// dd($jobs); 
+		$jobs->users()->attach($request->userid,['bid'=>$request->bid,'myduration'=>$request->duration,'cover_letter'=>$request->coverletter]);
+
+		return redirect()->route('profilepage');
+		// return view('frontend.profile',compact('jobs'));
 	}
 
 	public function project()

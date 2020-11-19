@@ -7,7 +7,12 @@
 					<div class="card-body">
 						<div class="row">
 							<div class="col-3">
-								<img src="{{asset('frontend_asset/img/klee.jpg')}}" class="card-img rounded-circle">
+								@role('freelancer')
+								<img src="{{Auth::user()->freelancer->photo}}" class="card-img rounded-circle">
+								@endrole
+								@role('employer')
+								<img src="{{Auth::user()->employer->photo}}" class="card-img rounded-circle">
+								@endrole
 							</div>
 							<div class="col-9 mt-2">
 								<p>{{ Auth::user()->name }}</p>
@@ -15,15 +20,18 @@
 
 								
             					@role('freelancer')
-            					@foreach ($freelancers as $freelancer)
+            					{{-- @foreach ($freelancers as $freelancer)
             					<p>{{$freelancer->address}}</p>
-            					@endforeach
+            					@endforeach --}}
+            					<p>{{Auth::user()->freelancer->address}}</p>
         						@endrole
 
         						@role('employer')
-            					@foreach ($employers as $employer)
+            					{{-- @foreach ($employers as $employer)
             					<p>{{$employer->address}}</p>
-            					@endforeach
+            					@endforeach --}}
+            					<p>{{Auth::user()->employer->address}}</p>
+
         						@endrole
 
 								
@@ -35,7 +43,12 @@
 			</div>
 			<div class="col-4">
 				<div class="px-4 py-5" style="background-color: #00d1c9">
-					<h4 class="text-light">0 points</h4>
+					@role('freelancer')
+					<h4 class="text-light">0 coin(s)</h4>
+					@endrole
+					@role('employer')
+					<h4 class="text-light">{{Auth::user()->employer->coin}} coin(s)</h4>
+					@endrole
 					<p class="text-light">credit</p>
 					<button class="btn btn-outline-light float-right mb-3 ">View Detail</button>
 				</div>
@@ -49,7 +62,7 @@
 				            <thead>
 				              <tr>
 				                <th>Project Name</th>
-				                <th>Employee Name</th>
+				                <th>Employer Name</th>
 				                <th>Budget</th>
 				                <th>Employee Bid</th>
 				                <th>Close Date</th>
@@ -58,6 +71,23 @@
 				              </tr>
 				            </thead>
 				            <tbody>
+				            	@foreach(Auth::user()->jobs as $job)
+				            	<tr>
+				            		<td>{{$job->name}}</td>
+				            		<td>{{$job->employer->name}}</td>
+				            		<td class="text-info">{{$job->salary->amount}} MMK</td>
+				            		<td class="text-info">{{number_format($job->pivot->bid)}} MMK</td>
+				            		<td>{{$job->closedate}}</td>
+				            		<td>{{$job->location->name}}</td>
+				            		@if($job->pivot->confirm_status == 0)
+				            		<td class="text-info">Pending</td>
+				            		@elseif($job->pivot->confirm_status == 1)
+				            		<td class="text-success">Accepted</td>
+				            		@else
+				            		<td class="text-danger">Rejected</td>
+				            		@endif
+				            	</tr>
+				            	@endforeach
 				            </tbody>
 				      </table>
 				</div>
@@ -82,12 +112,36 @@
 				              </tr>
 				            </thead>
 				            <tbody>
+				            	
+				            	@foreach($jobss as $job)				            	
+				            		@if($job->isEmpty())
+				            		@else
+				            		@foreach($job as $jobss)
+				            		<tr>
+				            		<td>{{$jobss->name}}</td>
+				            		<td>@foreach($jobss->users as $user){{$loop->first ? '':','}}{{$user->name}}@endforeach</td>
+				            		<td>@foreach($jobss->users as $user){{$loop->first ? '':','}}{{$user->pivot->bid}}@endforeach</td>
+				            		<td>{{$jobss->salary->amount}}</td>
+				            		<td>{{$jobss->closedate}}</td>
+				            		<td>{{$jobss->location->name}}</td>
+				            		<td>
+				            			<a href="{{route('job.detail',$jobss->id)}}" class="btn btn-info">
+										  Detail
+										</a>
+									</td>
+									</tr>
+				            		@endforeach
+				            		@endif	
+				            	@endforeach
+
+				            	{{-- <td>{{$jobs->user_id}}</td> --}}
+				            	
 				            </tbody>
 				      </table>
 				</div>
 			</div>
-			
 			@endrole
+			
 		</div>
 	</div>
 @endsection

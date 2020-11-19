@@ -11,31 +11,34 @@
 			</div>
 		
 		
-		<div class="col-md-9 mt-5" >
-			<h6 class="text-info mb-3">freelancers founded for you</h6>
+		<div class="col-md-9" >
+			<h5 class="text-info my-4">freelancers founded for you</h5>
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="jobs">
 						@foreach($freelancers as $freelancer)
-								<div class="card shadow mb-5">
-									<div class="card-body px-5">
-										<div class="row">
-											<div class="col-sm-2">
-												<img src="{{asset($freelancer->photo)}}" width="60px" height="60px" class="rounded-circle">
-											</div>
-											<div class="col-sm-10">
-												<h5 class="font-weight-bold">{{$freelancer->user->name}}</h5>
-							  					<p>{{$freelancer->subcategory->name}}</p>
-											</div>
-										</div>
-										<hr>
-										<p>{{$freelancer->description}}</p>
-										<div>
-											<a class="btn btn-info badge-pill px-5 float-right" 
-											href="{{route('freelancerdetail',$freelancer->id)}}">Detail</a>
-										</div>
-									</div>
-								</div>
+						<div class="card mb-5 shadow">          
+				          <div class="card-body">
+				            <div class="container">
+				              <div class="row">
+				                <div class="col-sm-3">
+				                  <img src="{{$freelancer->photo}}" class=" rounded-circle align-self-center card-img">  
+				                </div>
+				                <div class="col-sm-9 mt-3">
+				                  <h3>{{$freelancer->user->name}}</h3>
+				                  <p class="text-info font-weight-bold">{{$freelancer->subcategory->name}}</p>
+				                  <hr>
+				                  <p style="font-size: 18px;">{{$freelancer->description}}</p>
+				                  <div class="my-4 float-right">
+				                    <a class="btn btn-info badge-pill px-5 float-right" 
+									href="{{route('freelancerdetail',$freelancer->id)}}">Detail
+									</a>
+				                  </div>
+				                </div>
+				              </div>
+				            </div>             
+				          </div>          
+				        </div>
 						@endforeach
 					</div>
 				</div>

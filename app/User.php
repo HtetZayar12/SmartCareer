@@ -41,7 +41,7 @@ class User extends Authenticatable
 
     public function freelancer()
     {
-      return $this->belongsTo('App\Freelancer');
+      return $this->hasOne('App\Freelancer');
     }
 
     public function jobs()
@@ -50,12 +50,13 @@ class User extends Authenticatable
                     ->withPivot('bid')
                     ->withPivot('myduration')
                     ->withPivot('cover_letter')
+                    ->withPivot('confirm_status')
                     ->withTimestamps();
     }   
 
 
     public function employer()
     {
-      return $this->belongsTo('App\Employer');
+      return $this->hasOne('App\Employer');
     }
 }
