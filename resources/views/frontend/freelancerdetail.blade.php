@@ -21,11 +21,6 @@
             <span>{{$freelancers->address}}</ </span>
 
         </div>
-
-         <div><i class="fa fa-user-circle mx-3 mt-3"></i>
-            <span>{{$freelancers->address}}</ </span>
-
-        </div>
     
       </div>
 
@@ -43,13 +38,15 @@
             </div>
 
         </div>
-        {{-- <button class="btn btn-info my-3 w-25" data-target="#MODEL" data-toggle="modal">Hire</button> --}}
+        @role('employer')
+        <button class="btn btn-info my-3 w-25" data-target="#MODEL" data-toggle="modal">Hire</button>
+        @endrole
       </div>
 
       </div>
     </div>
 
-    {{-- <div class="modal fade" id="MODEL">
+    <div class="modal fade" id="MODEL">
       <div class="col-md-9 mt-5 offset-2" >
         <div class="row">
           <div class="col-sm-12">
@@ -85,7 +82,7 @@
                       </div>
 
                       <div class="col-sm-3 my-3">
-                        <a class="btn btn-info badge-pill px-5 float-right" href="{{route('jobdetail',$job->id)}}">Detail</a>
+                        <a class="btn badge-info badge-pill px-5 float-right text-light" {{-- href="{{route('jobdetail',$job->id)}}" --}}>Hire</a>
                       </div>
                     </div>
                   </div>
@@ -94,7 +91,7 @@
           </div>
         </div>
       </div>
-    </div> --}}
+    </div>
 
 </div> 
 
