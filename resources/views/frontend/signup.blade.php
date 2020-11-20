@@ -15,7 +15,7 @@
                 <div class="card-body p-0">
                     <div class="row">
                         <div class="col-lg-5 d-none d-lg-flex">
-                            <div class="flex-grow-1 bg-register-image" style="background-image: url(&quot;{{asset('frontend_asset/img/dogs/image2.jpeg')}}&quot;);">
+                            <div class="flex-grow-1 bg-register-image" style="background-image: url(&quot;{{asset('frontend_asset/img/frontend/signup.jpg')}}&quot;);">
                             </div>
                         </div>
                         <div class="col-lg-7">
